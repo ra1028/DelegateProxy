@@ -13,3 +13,13 @@
 BOOL isMethodReturnTypeVoid(struct objc_method_description method) {
     return strncmp(method.types, @encode(void), 1) == 0;
 }
+
+BOOL isMethodSignatureVoid(NSMethodSignature * _Nonnull methodSignature) {
+    const char *methodReturnType = methodSignature.methodReturnType;
+    return strcmp(methodReturnType, @encode(void)) == 0;
+}
+
+NSArray * _Nonnull argumentsFromInvocation(NSInvocation * _Nonnull invocation) {
+    // TODO:
+    return [NSArray array];
+}

@@ -7,3 +7,7 @@
 //
 
 BOOL isMethodReturnTypeVoid(struct objc_method_description method);
+
+BOOL isMethodSignatureVoid(NSMethodSignature * _Nonnull methodSignature);
+
+NSArray * _Nonnull argumentsFromInvocation(NSInvocation * _Nonnull invocation);

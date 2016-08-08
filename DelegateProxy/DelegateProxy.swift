@@ -6,7 +6,7 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
-public class DelegateProxy: NSObject {
+public class DelegateProxy: DPDelegateProxy {
     private static var selectorsOfClass = [NSValue: Set<Selector>]()
     
     public override class func initialize() {
@@ -32,6 +32,10 @@ public class DelegateProxy: NSObject {
             let classValue = NSValue(nonretainedObject: self)
             selectorsOfClass[classValue] = selectors
         }
+    }
+    
+    public override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
+        
     }
 }
 

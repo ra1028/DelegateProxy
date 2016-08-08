@@ -8,6 +8,7 @@
 
 @import Foundation;
 #import <DelegateProxy/DPRuntime.h>
+#import <DelegateProxy/DPDelegateProxy.h>
 
 FOUNDATION_EXPORT double DelegateProxyVersionNumber;
 FOUNDATION_EXPORT const unsigned char DelegateProxyVersionString[];
