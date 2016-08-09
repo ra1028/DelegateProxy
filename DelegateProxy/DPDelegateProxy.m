@@ -2,8 +2,8 @@
 //  DPDelegateProxy.m
 //  DelegateProxy
 //
-//  Created by 青山 遼 on 2016/08/08.
-//  Copyright © 2016年 Ryo Aoyama. All rights reserved.
+//  Created by Ryo Aoyama on 8/5/16.
+//  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,12 +13,12 @@
 @implementation DPDelegateProxy
 
 - (void)interceptedSelector:(SEL)selector arguments:(NSArray *)arguments {
-    
+    NSAssert(NO, @"Abstract method");
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    if (isMethodSignatureVoid(anInvocation.methodSignature)) {
-        NSArray *arguments = argumentsFromInvocation(anInvocation);
+    if (DP_IsMethodSignatureVoid(anInvocation.methodSignature)) {
+        NSArray *arguments = DP_ArgumentsFromInvocation(anInvocation);
         [self interceptedSelector:anInvocation.selector arguments:arguments];
     }
 }

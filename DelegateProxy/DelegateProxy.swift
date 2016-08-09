@@ -6,8 +6,41 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
+// TODO: temp
+public protocol DelegateObservable {
+    func observe(arguments: [AnyObject])
+}
+
+public extension DelegateObservable {
+    func registerTo(delegateProxy: DelegateProxy, selector: Selector...) -> Self {
+        registerTo(delegateProxy, selectors: selector)
+        return self
+    }
+    
+    func registerTo(delegateProxy: DelegateProxy, selectors: [Selector]) -> Self {
+        delegateProxy.register(self, selectors: selectors)
+        return self
+    }
+}
+
+// TODO: temp
+public final class DelegateObserver: DelegateObservable {
+    private var handler: ([AnyObject] -> Void)?
+    
+    public init() {}
+    
+    public func observe(arguments: [AnyObject]) {
+        handler?(arguments)
+    }
+    
+    public func observe(handler: [AnyObject] -> Void) {
+        self.handler = handler
+    }
+}
+
 public class DelegateProxy: DPDelegateProxy {
     private static var selectorsOfClass = [NSValue: Set<Selector>]()
+    private var observerOfSelector = [Selector: DelegateObservable]()
     
     public override class func initialize() {
         objc_sync_enter(self)
@@ -35,7 +68,15 @@ public class DelegateProxy: DPDelegateProxy {
     }
     
     public override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
-        
+        observerOfSelector[selector]?.observe(arguments)
+    }
+    
+    public func register(observer: DelegateObservable, selector: Selector...) {
+        register(observer, selectors: selector)
+    }
+    
+    func register(observer: DelegateObservable, selectors: [Selector]) {
+        selectors.forEach { observerOfSelector[$0] = observer }
     }
 }
 
@@ -48,7 +89,7 @@ private extension DelegateProxy {
         
         (0..<protocolMethodCount).forEach {
             let methodDescription = methodDescriptions[Int($0)]
-            if isMethodReturnTypeVoid(methodDescription) {
+            if DP_IsMethodReturnTypeVoid(methodDescription) {
                 selectors.insert(methodDescription.name)
             }
         }

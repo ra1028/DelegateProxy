@@ -6,8 +6,10 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
-BOOL isMethodReturnTypeVoid(struct objc_method_description method);
+BOOL DP_IsMethodReturnTypeVoid(struct objc_method_description method);
 
-BOOL isMethodSignatureVoid(NSMethodSignature * _Nonnull methodSignature);
+BOOL DP_IsMethodSignatureVoid(NSMethodSignature * _Nonnull methodSignature);
 
-NSArray * _Nonnull argumentsFromInvocation(NSInvocation * _Nonnull invocation);
+NSArray * _Nonnull DP_ArgumentsFromInvocation(NSInvocation * _Nonnull invocation);
+
+id _Nonnull DP_ArgumentsFromInvocationWithIndex(NSInvocation * _Nonnull invocation, NSUInteger index);

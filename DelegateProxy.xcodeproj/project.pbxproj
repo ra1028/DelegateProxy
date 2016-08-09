@@ -56,12 +56,12 @@
 		2A14F8691D57B86300656679 /* DelegateProxy */ = {
 			isa = PBXGroup;
 			children = (
-				2A14F86A1D57B86300656679 /* DelegateProxy.h */,
 				2A14F86B1D57B86300656679 /* DelegateProxy.swift */,
 				6B16C50F1D585EE6001BC28B /* DPDelegateProxy.h */,
 				6B16C50D1D585ED9001BC28B /* DPDelegateProxy.m */,
 				2A14F86C1D57B86300656679 /* DPRuntime.h */,
 				2A14F86D1D57B86300656679 /* DPRuntime.m */,
+				2A14F86A1D57B86300656679 /* DelegateProxy.h */,
 				2A14F86E1D57B86300656679 /* Info.plist */,
 			);
 			path = DelegateProxy;
