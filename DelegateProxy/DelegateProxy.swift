@@ -6,43 +6,13 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
-// TODO: temp
-public protocol DelegateObservable {
-    func observe(arguments: [AnyObject])
-}
-
-public extension DelegateObservable {
-    func registerTo(delegateProxy: DelegateProxy, selector: Selector...) -> Self {
-        registerTo(delegateProxy, selectors: selector)
-        return self
-    }
-    
-    func registerTo(delegateProxy: DelegateProxy, selectors: [Selector]) -> Self {
-        delegateProxy.register(self, selectors: selectors)
-        return self
-    }
-}
-
-// TODO: temp
-public final class DelegateObserver: DelegateObservable {
-    private var handler: ([AnyObject] -> Void)?
-    
-    public init() {}
-    
-    public func observe(arguments: [AnyObject]) {
-        handler?(arguments)
-    }
-    
-    public func observe(handler: [AnyObject] -> Void) {
-        self.handler = handler
-    }
-}
-
 public class DelegateProxy: DPDelegateProxy {
     private static var selectorsOfClass = [NSValue: Set<Selector>]()
-    private var observerOfSelector = [Selector: DelegateObservable]()
-    
-    public override class func initialize() {
+    private var receivableOfSelector = [Selector: Receivable]()
+}
+
+public extension DelegateProxy {
+    override class func initialize() {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
         
@@ -67,16 +37,26 @@ public class DelegateProxy: DPDelegateProxy {
         }
     }
     
-    public override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
-        observerOfSelector[selector]?.observe(arguments)
+    override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
+        receivableOfSelector[selector]?.send(arguments)
     }
     
-    public func register(observer: DelegateObservable, selector: Selector...) {
-        register(observer, selectors: selector)
+    func register(receiver: Receivable, selector: Selector...) {
+        register(receiver, selectors: selector)
     }
     
-    func register(observer: DelegateObservable, selectors: [Selector]) {
-        selectors.forEach { observerOfSelector[$0] = observer }
+    func receive(selector: Selector..., handler: [AnyObject] -> Void) {
+        receive(selector, handler: handler)
+    }
+}
+
+extension DelegateProxy {
+    func register(receiver: Receivable, selectors: [Selector]) {
+        selectors.forEach { receivableOfSelector[$0] = receiver }
+    }
+    
+    func receive(selectors: [Selector], handler: [AnyObject] -> Void) {
+        register(Receiver(handler), selectors: selectors)
     }
 }
 

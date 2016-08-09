@@ -20,20 +20,19 @@ final class Sample: NSObject {
     }
 }
 
-final class SampleDelegateProxy: DelegateProxy, SampleDelegate {
-    private(set) lazy var observer: DelegateObserver = DelegateObserver().registerTo(
-        self, selector: #selector(SampleDelegate.other), #selector(SampleDelegate.something(_:))
-    )
-}
+final class SampleDelegateProxy: DelegateProxy, SampleDelegate {}
 
 let sample = Sample()
 let delegateProxy = SampleDelegateProxy()
 sample.delegate = delegateProxy
 
-delegateProxy.observer.observe {
+delegateProxy.receive(
+    #selector(SampleDelegate.other),
+    #selector(SampleDelegate.something(_:))
+) {
     print($0)
     return
 }
 
-sample.doIt()
+//sample.doIt()
 sample.other()
