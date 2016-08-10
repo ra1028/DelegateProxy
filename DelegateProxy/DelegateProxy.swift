@@ -9,6 +9,9 @@
 public class DelegateProxy: DPDelegateProxy {
     private static var selectorsOfClass = [NSValue: Set<Selector>]()
     private var receivableOfSelector = [Selector: Receivable]()
+    private static var classValue: NSValue {
+        return .init(nonretainedObject: self)
+    }
 }
 
 public extension DelegateProxy {
@@ -32,31 +35,30 @@ public extension DelegateProxy {
         }
         
         if !selectors.isEmpty {
-            let classValue = NSValue(nonretainedObject: self)
             selectorsOfClass[classValue] = selectors
         }
+    }
+    
+    public override func respondsToSelector(aSelector: Selector) -> Bool {
+        return super.respondsToSelector(aSelector) || canRespondToSelector(aSelector)
     }
     
     override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
         receivableOfSelector[selector]?.send(arguments)
     }
     
-    func register(receiver: Receivable, selector: Selector...) {
-        register(receiver, selectors: selector)
+    func receive(selector: Selector..., receiver: Receivable) {
+        receiveSelectors(selector, receiver: receiver)
     }
     
     func receive(selector: Selector..., handler: [AnyObject] -> Void) {
-        receive(selector, handler: handler)
+        receiveSelectors(selector, receiver: Receiver(handler))
     }
 }
 
 extension DelegateProxy {
-    func register(receiver: Receivable, selectors: [Selector]) {
+    func receiveSelectors(selectors: [Selector], receiver: Receivable) {
         selectors.forEach { receivableOfSelector[$0] = receiver }
-    }
-    
-    func receive(selectors: [Selector], handler: [AnyObject] -> Void) {
-        register(Receiver(handler), selectors: selectors)
     }
 }
 
@@ -85,5 +87,13 @@ private extension DelegateProxy {
         }
         
         return selectors
+    }
+    
+    func canRespondToSelector(selector: Selector) -> Bool {
+        objc_sync_enter(self)
+        defer { objc_sync_exit(self) }
+        
+        let allowedSelectors = self.dynamicType.selectorsOfClass[self.dynamicType.classValue]
+        return allowedSelectors?.contains(selector) ?? false
     }
 }

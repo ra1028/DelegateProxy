@@ -12,7 +12,7 @@ public protocol Receivable {
 
 public extension Receivable {
     func registerTo(delegateProxy: DelegateProxy, selector: Selector...) -> Self {
-        delegateProxy.register(self, selectors: selector)
+        delegateProxy.receiveSelectors(selector, receiver: self)
         return self
     }
 }
