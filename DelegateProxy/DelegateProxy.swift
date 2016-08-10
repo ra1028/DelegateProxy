@@ -8,10 +8,12 @@
 
 public class DelegateProxy: DPDelegateProxy {
     private static var selectorsOfClass = [NSValue: Set<Selector>]()
-    private var receivableOfSelector = [Selector: Receivable]()
+    
     private static var classValue: NSValue {
         return .init(nonretainedObject: self)
     }
+    
+    private var receivableOfSelector = [Selector: Receivable]()
 }
 
 public extension DelegateProxy {

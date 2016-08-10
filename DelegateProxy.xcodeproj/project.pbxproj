@@ -13,6 +13,7 @@
 		2A14F8721D57B86300656679 /* DPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A14F86D1D57B86300656679 /* DPRuntime.m */; };
 		2AFA3CAA1D5A3CEF00683E15 /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CA91D5A3CEF00683E15 /* Receivable.swift */; };
 		2AFA3CAC1D5A3D1400683E15 /* Receiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CAB1D5A3D1400683E15 /* Receiver.swift */; };
+		2AFA3CAE1D5B5C4500683E15 /* DelegateForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CAD1D5B5C4500683E15 /* DelegateForwardable.swift */; };
 		6B16C50E1D585ED9001BC28B /* DPDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B16C50D1D585ED9001BC28B /* DPDelegateProxy.m */; };
 		6B16C5101D586279001BC28B /* DPDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B16C50F1D585EE6001BC28B /* DPDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		2A14F86E1D57B86300656679 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AFA3CA91D5A3CEF00683E15 /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
 		2AFA3CAB1D5A3D1400683E15 /* Receiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receiver.swift; sourceTree = "<group>"; };
+		2AFA3CAD1D5B5C4500683E15 /* DelegateForwardable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateForwardable.swift; sourceTree = "<group>"; };
 		6B16C50D1D585ED9001BC28B /* DPDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDelegateProxy.m; sourceTree = "<group>"; };
 		6B16C50F1D585EE6001BC28B /* DPDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPDelegateProxy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 				2A14F86D1D57B86300656679 /* DPRuntime.m */,
 				2A14F86A1D57B86300656679 /* DelegateProxy.h */,
 				2A14F86E1D57B86300656679 /* Info.plist */,
+				2AFA3CAD1D5B5C4500683E15 /* DelegateForwardable.swift */,
 			);
 			path = DelegateProxy;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AFA3CAE1D5B5C4500683E15 /* DelegateForwardable.swift in Sources */,
 				6B16C50E1D585ED9001BC28B /* DPDelegateProxy.m in Sources */,
 				2AFA3CAA1D5A3CEF00683E15 /* Receivable.swift in Sources */,
 				2AFA3CAC1D5A3D1400683E15 /* Receiver.swift in Sources */,
