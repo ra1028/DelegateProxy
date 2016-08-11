@@ -46,14 +46,14 @@ public extension DelegateProxy {
     }
     
     override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
-        receivableOfSelector[selector]?.send(arguments)
+        receivableOfSelector[selector]?.send(Arguments(arguments))
     }
     
     func receive(selector: Selector..., receiver: Receivable) {
         receiveSelectors(selector, receiver: receiver)
     }
     
-    func receive(selector: Selector..., handler: [AnyObject] -> Void) {
+    func receive(selector: Selector..., handler: Arguments -> Void) {
         receiveSelectors(selector, receiver: Receiver(handler))
     }
 }

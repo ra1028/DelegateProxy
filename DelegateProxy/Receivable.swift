@@ -7,7 +7,7 @@
 //
 
 public protocol Receivable {
-    func send(arguments: [AnyObject])
+    func send(arguments: Arguments)
 }
 
 public extension Receivable {

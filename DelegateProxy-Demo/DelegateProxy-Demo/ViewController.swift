@@ -27,7 +27,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        configure()        
     }
 }
 
@@ -35,13 +35,14 @@ private extension ViewController {
     func configure() {
         lTextView.delegateProxy
             .receive(#selector(UITextViewDelegate.textViewDidChange(_:))) {
-                guard let tv = $0[0] as? UITextView else { return }
+                guard let tv: UITextView = $0.value(0) else { return }
                 print("Left: \(tv.text)")
+                [0].first
         }
         
         rTextView.delegateProxy
             .receive(#selector(UITextViewDelegate.textViewDidChange(_:))) {
-                guard let tv = $0[0] as? UITextView else { return }
+                guard let tv: UITextView = $0.value(0) else { return }
                 print("Right: \(tv.text)")
         }
     }

@@ -7,13 +7,13 @@
 //
 
 public final class Receiver: Receivable {
-    private let handler: [AnyObject] -> Void
+    private let handler: Arguments -> Void
     
-    init(_ handler: [AnyObject] -> Void) {
+    init(_ handler: Arguments -> Void) {
         self.handler = handler
     }
     
-    public func send(arguments: [AnyObject]) {
+    public func send(arguments: Arguments) {
         handler(arguments)
     }
 }
