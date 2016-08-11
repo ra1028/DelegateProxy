@@ -6,27 +6,27 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
-private var key: UInt8 = 0
+private var associatedKey: UInt8 = 0
 
 public protocol DelegateForwardable: class {
-    associatedtype Proxy: DelegateProxy
+    associatedtype DelegateProxyType: DelegateProxy
     
-    static func createDelegateProxy() -> Proxy
-    func setDelegateProxy(proxy: Proxy)
+    static func createDelegateProxy() -> DelegateProxyType
+    func setDelegateProxy(delegateProxy: DelegateProxyType)
 }
 
 public extension DelegateForwardable {
-    var delegateProxy: Proxy {
-        let object: AnyObject? = objc_getAssociatedObject(self, &key)
+    var delegateProxy: DelegateProxyType {
+        let object: AnyObject? = objc_getAssociatedObject(self, &associatedKey)
         
-        if let proxy = object as? Proxy {
-            setDelegateProxy(proxy)
-            return proxy
+        if let delegateProxy = object as? DelegateProxyType {
+            setDelegateProxy(delegateProxy)
+            return delegateProxy
         }
         
-        let proxy = Self.createDelegateProxy()
-        objc_setAssociatedObject(self, &key, proxy, .OBJC_ASSOCIATION_RETAIN)
-        setDelegateProxy(proxy)
-        return proxy
+        let delegateProxy = Self.createDelegateProxy()
+        objc_setAssociatedObject(self, &associatedKey, delegateProxy, .OBJC_ASSOCIATION_RETAIN)
+        setDelegateProxy(delegateProxy)
+        return delegateProxy
     }
 }

@@ -60,7 +60,10 @@ public extension DelegateProxy {
 
 extension DelegateProxy {
     func receiveSelectors(selectors: [Selector], receiver: Receivable) {
-        selectors.forEach { receivableOfSelector[$0] = receiver }
+        selectors.forEach {
+            assert(respondsToSelector($0), "\(self.dynamicType) doesn't respond to selector \($0)")
+            receivableOfSelector[$0] = receiver
+        }
     }
 }
 
