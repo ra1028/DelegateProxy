@@ -17,7 +17,7 @@ public class DelegateProxy: DPDelegateProxy {
 }
 
 public extension DelegateProxy {
-    override class func initialize() {
+    final override class func initialize() {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
         
@@ -41,30 +41,30 @@ public extension DelegateProxy {
         }
     }
     
-    public override func respondsToSelector(aSelector: Selector) -> Bool {
-        return super.respondsToSelector(aSelector) || canRespondToSelector(aSelector)
-    }
-    
-    override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
+    final override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
         receivableOfSelector[selector]?.send(Arguments(arguments))
     }
     
-    func receive(selector: Selector..., receiver: Receivable) {
+    final override func respondsToSelector(aSelector: Selector) -> Bool {
+        return super.respondsToSelector(aSelector) || canRespondToSelector(aSelector)
+    }
+    
+    final func receive(selector: Selector..., receiver: Receivable) {
         receive(selectors: selector, receiver: receiver)
     }
     
-    func receive(selector: Selector..., handler: Arguments -> Void) {
+    final func receive(selector: Selector..., handler: Arguments -> Void) {
         receive(selectors: selector, receiver: Receiver(handler))
     }
     
-    func receive(selectors selectors: [Selector], receiver: Receivable) {
+    final func receive(selectors selectors: [Selector], receiver: Receivable) {
         selectors.forEach {
             assert(respondsToSelector($0), "\(self.dynamicType) doesn't respond to selector \($0)")
             receivableOfSelector[$0] = receiver
         }
     }
     
-    func receive(selectors selectors: [Selector], handler: Arguments -> Void) {
+    final func receive(selectors selectors: [Selector], handler: Arguments -> Void) {
         receive(selectors: selectors, receiver: Receiver(handler))
     }
 }

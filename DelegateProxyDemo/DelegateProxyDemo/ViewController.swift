@@ -25,13 +25,17 @@ extension DelegateProxy {
     }
 }
 
-public final class TextViewDelegateProxy: DelegateProxy, UITextViewDelegate {}
+public final class TextViewDelegateProxy: DelegateProxy, UITextViewDelegate {
+    
+}
 
-extension UITextView: DelegateForwardable {
+extension UITextView {
     var textChange: Signal<Arguments, NoError> {
         return delegateProxy.receiveSignal(#selector(UITextViewDelegate.textViewDidChange(_:)))
     }
-    
+}
+
+extension UITextView: DelegateForwardable {
     public static func createDelegateProxy() -> TextViewDelegateProxy {
         return .init()
     }
@@ -68,12 +72,14 @@ private extension ViewController {
         lTextView.textChange
             .map { $0.value(0, as: UITextView.self)?.text }
             .ignoreNil()
+            .skipRepeats()
             .observeNext { print("Left: \($0)") }
         
         rTextView.delegateProxy
             .receiveSignal(#selector(UITextViewDelegate.textViewDidChange(_:)))
             .map { $0.value(0, as: UITextView.self)?.text }
             .ignoreNil()
+            .skipRepeats()
             .observeNext { print("Right: \($0)")}
     }
 }
