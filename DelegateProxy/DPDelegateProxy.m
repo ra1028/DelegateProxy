@@ -17,8 +17,8 @@
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    if (DP_IsMethodSignatureVoid(anInvocation.methodSignature)) {
-        NSArray *arguments = DP_ArgumentsFromInvocation(anInvocation);
+    if (DP_isMethodSignatureVoid(anInvocation.methodSignature)) {
+        NSArray *arguments = DP_argumentsFromInvocation(anInvocation);
         [self interceptedSelector:anInvocation.selector arguments:arguments];
     }
 }

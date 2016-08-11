@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  DelegateProxy-Demo
 //
-//  Created by 青山 遼 on 2016/08/10.
-//  Copyright © 2016年 青山 遼. All rights reserved.
+//  Created by Ryo Aoyama on 8/8/16.
+//  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
 import UIKit
@@ -37,7 +37,6 @@ private extension ViewController {
             .receive(#selector(UITextViewDelegate.textViewDidChange(_:))) {
                 guard let tv: UITextView = $0.value(0) else { return }
                 print("Left: \(tv.text)")
-                [0].first
         }
         
         rTextView.delegateProxy

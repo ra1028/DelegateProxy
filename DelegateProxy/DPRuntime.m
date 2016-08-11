@@ -10,16 +10,16 @@
 #import <objc/runtime.h>
 #import <DelegateProxy/DPRuntime.h>
 
-BOOL DP_IsMethodReturnTypeVoid(struct objc_method_description method) {
+BOOL DP_isMethodReturnTypeVoid(struct objc_method_description method) {
     return strncmp(method.types, @encode(void), 1) == 0;
 }
 
-BOOL DP_IsMethodSignatureVoid(NSMethodSignature * _Nonnull methodSignature) {
+BOOL DP_isMethodSignatureVoid(NSMethodSignature * _Nonnull methodSignature) {
     const char *methodReturnType = methodSignature.methodReturnType;
     return strcmp(methodReturnType, @encode(void)) == 0;
 }
 
-NSArray * _Nonnull DP_ArgumentsFromInvocation(NSInvocation * _Nonnull invocation) {
+NSArray * _Nonnull DP_argumentsFromInvocation(NSInvocation * _Nonnull invocation) {
     NSUInteger numberOfHiddenArguments = 2; // self + cmd
     NSUInteger numberOfArguments = invocation.methodSignature.numberOfArguments;
     
@@ -27,13 +27,13 @@ NSArray * _Nonnull DP_ArgumentsFromInvocation(NSInvocation * _Nonnull invocation
     
     NSMutableArray *arguments = [NSMutableArray arrayWithCapacity:numberOfArguments - numberOfHiddenArguments];
     for (NSUInteger index = numberOfHiddenArguments; index < numberOfArguments; ++index) {
-        [arguments addObject:DP_ArgumentsFromInvocationWithIndex(invocation, index)];
+        [arguments addObject:DP_argumentsFromInvocationWithIndex(invocation, index)];
     }
     
     return arguments;
 }
 
-id _Nonnull DP_ArgumentsFromInvocationWithIndex(NSInvocation * _Nonnull invocation, NSUInteger index) {
+id _Nonnull DP_argumentsFromInvocationWithIndex(NSInvocation * _Nonnull invocation, NSUInteger index) {
     const char *argumentType = [invocation.methodSignature getArgumentTypeAtIndex:index];
     
     if (argumentType[0] == 'r') {

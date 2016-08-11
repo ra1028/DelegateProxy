@@ -73,7 +73,7 @@ private extension DelegateProxy {
         
         (0..<protocolMethodCount).forEach {
             let methodDescription = methodDescriptions[Int($0)]
-            if DP_IsMethodReturnTypeVoid(methodDescription) {
+            if DP_isMethodReturnTypeVoid(methodDescription) {
                 selectors.insert(methodDescription.name)
             }
         }

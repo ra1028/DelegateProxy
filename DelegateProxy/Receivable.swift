@@ -11,7 +11,7 @@ public protocol Receivable {
 }
 
 public extension Receivable {
-    func registerTo(delegateProxy: DelegateProxy, selector: Selector...) -> Self {
+    func receiveFrom(delegateProxy: DelegateProxy, selector: Selector...) -> Self {
         delegateProxy.receiveSelectors(selector, receiver: self)
         return self
     }

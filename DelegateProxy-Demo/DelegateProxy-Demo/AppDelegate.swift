@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  DelegateProxy-Demo
 //
-//  Created by 青山 遼 on 2016/08/10.
-//  Copyright © 2016年 青山 遼. All rights reserved.
+//  Created by Ryo Aoyama on 8/8/16.
+//  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
 import UIKit
