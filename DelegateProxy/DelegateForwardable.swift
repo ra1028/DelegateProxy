@@ -19,14 +19,14 @@ public extension DelegateForwardable {
     var delegateProxy: DelegateProxyType {
         let object: AnyObject? = objc_getAssociatedObject(self, &associatedKey)
         
-        if let delegateProxy = object as? DelegateProxyType {
-            setDelegateProxy(delegateProxy)
-            return delegateProxy
+        if let proxy = object as? DelegateProxyType {
+            setDelegateProxy(proxy)
+            return proxy
         }
         
-        let delegateProxy = Self.createDelegateProxy()
-        objc_setAssociatedObject(self, &associatedKey, delegateProxy, .OBJC_ASSOCIATION_RETAIN)
-        setDelegateProxy(delegateProxy)
-        return delegateProxy
+        let proxy = Self.createDelegateProxy()
+        objc_setAssociatedObject(self, &associatedKey, proxy, .OBJC_ASSOCIATION_RETAIN)
+        setDelegateProxy(proxy)
+        return proxy
     }
 }

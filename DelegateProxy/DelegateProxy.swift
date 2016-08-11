@@ -50,20 +50,22 @@ public extension DelegateProxy {
     }
     
     func receive(selector: Selector..., receiver: Receivable) {
-        receiveSelectors(selector, receiver: receiver)
+        receive(selectors: selector, receiver: receiver)
     }
     
     func receive(selector: Selector..., handler: Arguments -> Void) {
-        receiveSelectors(selector, receiver: Receiver(handler))
+        receive(selectors: selector, receiver: Receiver(handler))
     }
-}
-
-extension DelegateProxy {
-    func receiveSelectors(selectors: [Selector], receiver: Receivable) {
+    
+    func receive(selectors selectors: [Selector], receiver: Receivable) {
         selectors.forEach {
             assert(respondsToSelector($0), "\(self.dynamicType) doesn't respond to selector \($0)")
             receivableOfSelector[$0] = receiver
         }
+    }
+    
+    func receive(selectors selectors: [Selector], handler: Arguments -> Void) {
+        receive(selectors: selectors, receiver: Receiver(handler))
     }
 }
 
