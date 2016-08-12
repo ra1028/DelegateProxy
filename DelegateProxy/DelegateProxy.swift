@@ -13,7 +13,20 @@ public class DelegateProxy: DPDelegateProxy {
         return .init(nonretainedObject: self)
     }
     
+    private var mutex = pthread_mutex_t()
+    
     private var receivableOfSelector = [Selector: Receivable]()
+    
+    public override init() {
+        super.init()
+        let result = pthread_mutex_init(&mutex, nil)
+        assert(result == 0, "Failed to initialize mutex on \(self): \(result).")
+    }
+    
+    deinit {
+        let result = pthread_mutex_destroy(&mutex)
+        assert(result == 0, "Failed to destroy mutex on \(self): \(result).")
+    }
 }
 
 public extension DelegateProxy {
@@ -115,12 +128,12 @@ private extension DelegateProxy {
     }
     
     func lock() {
-        let result = objc_sync_enter(self)
+        let result = pthread_mutex_lock(&mutex)
         assert(result == 0, "Failed to lock \(self): \(result).")
     }
     
     func unlock() {
-        let result = objc_sync_exit(self)
+        let result = pthread_mutex_unlock(&mutex)
         assert(result == 0, "Failed to unlock \(self): \(result).")
     }
 }
