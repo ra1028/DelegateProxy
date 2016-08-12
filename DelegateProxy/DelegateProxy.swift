@@ -18,8 +18,8 @@ public class DelegateProxy: DPDelegateProxy {
 
 public extension DelegateProxy {
     final override class func initialize() {
-        objc_sync_enter(self)
-        defer { objc_sync_exit(self) }
+        lock()
+        defer { unlock() }
         
         var selectors = Set<Selector>()
         var targetClass: AnyClass? = self
@@ -59,7 +59,7 @@ public extension DelegateProxy {
     
     final func receive(selectors selectors: [Selector], receiver: Receivable) {
         selectors.forEach {
-            assert(respondsToSelector($0), "\(self.dynamicType) doesn't respond to selector \($0)")
+            assert(respondsToSelector($0), "\(self.dynamicType) doesn't respond to selector \($0).")
             receivableOfSelector[$0] = receiver
         }
     }
@@ -97,10 +97,30 @@ private extension DelegateProxy {
     }
     
     func canRespondToSelector(selector: Selector) -> Bool {
-        objc_sync_enter(self)
-        defer { objc_sync_exit(self) }
+        lock()
+        defer { unlock() }
         
         let allowedSelectors = self.dynamicType.selectorsOfClass[self.dynamicType.classValue]
         return allowedSelectors?.contains(selector) ?? false
+    }
+    
+    static func lock() {
+        let result = objc_sync_enter(self)
+        assert(result == 0, "Failed to lock \(self): \(result).")
+    }
+    
+    static func unlock() {
+        let result = objc_sync_exit(self)
+        assert(result == 0, "Failed to unlock \(self): \(result).")
+    }
+    
+    func lock() {
+        let result = objc_sync_enter(self)
+        assert(result == 0, "Failed to lock \(self): \(result).")
+    }
+    
+    func unlock() {
+        let result = objc_sync_exit(self)
+        assert(result == 0, "Failed to unlock \(self): \(result).")
     }
 }
