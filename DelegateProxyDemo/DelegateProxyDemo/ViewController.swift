@@ -25,9 +25,7 @@ extension DelegateProxy {
     }
 }
 
-public final class TextViewDelegateProxy: DelegateProxy, UITextViewDelegate {
-    
-}
+public final class TextViewDelegateProxy: DelegateProxy, UITextViewDelegate {}
 
 extension UITextView {
     var textChange: Signal<Arguments, NoError> {

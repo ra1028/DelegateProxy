@@ -11,12 +11,12 @@
 		2AA029C71D5CE89300C1437D /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA029C21D5CE72300C1437D /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AA029C81D5CE89300C1437D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA029C31D5CE72300C1437D /* Result.framework */; };
 		2AA029C91D5CE89300C1437D /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA029C31D5CE72300C1437D /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2AA029D31D5CF60C00C1437D /* DelegateProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA029D21D5CF60C00C1437D /* DelegateProxy.framework */; };
 		2AFA3CBE1D5CDF1D00683E15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CBD1D5CDF1D00683E15 /* AppDelegate.swift */; };
 		2AFA3CC01D5CDF1D00683E15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CBF1D5CDF1D00683E15 /* ViewController.swift */; };
 		2AFA3CC31D5CDF1D00683E15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFA3CC11D5CDF1D00683E15 /* Main.storyboard */; };
 		2AFA3CC51D5CDF1D00683E15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AFA3CC41D5CDF1D00683E15 /* Assets.xcassets */; };
 		2AFA3CC81D5CDF1D00683E15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AFA3CC61D5CDF1D00683E15 /* LaunchScreen.storyboard */; };
+		6BA226991D5D609700A3D317 /* DelegateProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA226981D5D609700A3D317 /* DelegateProxy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +46,7 @@
 		2AFA3CC41D5CDF1D00683E15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AFA3CC71D5CDF1D00683E15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AFA3CC91D5CDF1D00683E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BA226981D5D609700A3D317 /* DelegateProxy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DelegateProxy.framework; path = "../build/Debug-iphoneos/DelegateProxy.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AA029D31D5CF60C00C1437D /* DelegateProxy.framework in Frameworks */,
+				6BA226991D5D609700A3D317 /* DelegateProxy.framework in Frameworks */,
 				2AA029C81D5CE89300C1437D /* Result.framework in Frameworks */,
 				2AA029C61D5CE89300C1437D /* ReactiveCocoa.framework in Frameworks */,
 			);
@@ -95,6 +96,7 @@
 		CD45C304BCF540999F2DEC9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6BA226981D5D609700A3D317 /* DelegateProxy.framework */,
 				2AA029D21D5CF60C00C1437D /* DelegateProxy.framework */,
 				2AA029C21D5CE72300C1437D /* ReactiveCocoa.framework */,
 				2AA029C31D5CE72300C1437D /* Result.framework */,

@@ -17,16 +17,22 @@ public protocol DelegateForwardable: class {
 
 public extension DelegateForwardable {
     var delegateProxy: DelegateProxyType {
-        let object: AnyObject? = objc_getAssociatedObject(self, &associatedKey)
-        
-        if let proxy = object as? DelegateProxyType {
-            setDelegateProxy(proxy)
-            return proxy
+        let proxy: DelegateProxyType
+        if let associatedProxy = associatedDelegateProxy {
+            proxy = associatedProxy
+        } else {
+            proxy = Self.createDelegateProxy()
+            objc_setAssociatedObject(self, &associatedKey, proxy, .OBJC_ASSOCIATION_RETAIN)
         }
         
-        let proxy = Self.createDelegateProxy()
-        objc_setAssociatedObject(self, &associatedKey, proxy, .OBJC_ASSOCIATION_RETAIN)
         setDelegateProxy(proxy)
+        
         return proxy
+    }
+    
+    private var associatedDelegateProxy: DelegateProxyType? {
+        guard let object = objc_getAssociatedObject(self, &associatedKey) else { return nil }
+        if let proxy = object as? DelegateProxyType { return proxy }
+        fatalError("Invalid associated object. Expected type is \(DelegateProxyType.self).")
     }
 }
