@@ -30,7 +30,22 @@
 		2A8EE2A31D5F903700C2985E /* DelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33B1D5E598300AC312F /* DelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A8EE2A41D5F903700C2985E /* DPDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33D1D5E598300AC312F /* DPDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A8EE2A51D5F903700C2985E /* DPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33F1D5E598300AC312F /* DPRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A8EE2AF1D5F908800C2985E /* DelegateProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8EE28E1D5F8F9100C2985E /* DelegateProxy.framework */; };
+		2A8EE2B71D5F90B500C2985E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A8EE2B61D5F90B500C2985E /* Info.plist */; };
+		2A8EE2B81D5F919F00C2985E /* DelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */; };
+		2A8EE2B91D5F919F00C2985E /* DelegateForwardableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */; };
+		2A8EE2BA1D5F919F00C2985E /* DelegateTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A8EE2B01D5F908800C2985E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A14F8441D57B61B00656679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A8EE28D1D5F8F9100C2985E;
+			remoteInfo = "DelegateProxy-macOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2A18B3391D5E598300AC312F /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
@@ -53,6 +68,8 @@
 		2A8EE2341D5F8B5600C2985E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8EE28E1D5F8F9100C2985E /* DelegateProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DelegateProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8EE29A1D5F8FC400C2985E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A8EE2AA1D5F908800C2985E /* DelegateProxyTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DelegateProxyTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8EE2B61D5F90B500C2985E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +94,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A8EE2A71D5F908800C2985E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8EE2AF1D5F908800C2985E /* DelegateProxy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +121,7 @@
 				2A18B3651D5E5DF200AC312F /* DelegateProxyTests-iOS.xctest */,
 				2A8EE2271D5F8AB400C2985E /* DelegateProxy.framework */,
 				2A8EE28E1D5F8F9100C2985E /* DelegateProxy.framework */,
+				2A8EE2AA1D5F908800C2985E /* DelegateProxyTests-macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +160,7 @@
 				2A8EE2301D5F8B5600C2985E /* DelegateProxy-iOS */,
 				2A8EE2991D5F8FC400C2985E /* DelegateProxy-macOS */,
 				2A8EE2331D5F8B5600C2985E /* DelegateProxyTests-iOS */,
+				2A8EE2B51D5F90B500C2985E /* DelegateProxyTests-macOS */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -160,6 +187,14 @@
 				2A8EE29A1D5F8FC400C2985E /* Info.plist */,
 			);
 			path = "DelegateProxy-macOS";
+			sourceTree = "<group>";
+		};
+		2A8EE2B51D5F90B500C2985E /* DelegateProxyTests-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				2A8EE2B61D5F90B500C2985E /* Info.plist */,
+			);
+			path = "DelegateProxyTests-macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +276,24 @@
 			productReference = 2A8EE28E1D5F8F9100C2985E /* DelegateProxy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		2A8EE2A91D5F908800C2985E /* DelegateProxyTests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A8EE2B21D5F908800C2985E /* Build configuration list for PBXNativeTarget "DelegateProxyTests-macOS" */;
+			buildPhases = (
+				2A8EE2A61D5F908800C2985E /* Sources */,
+				2A8EE2A71D5F908800C2985E /* Frameworks */,
+				2A8EE2A81D5F908800C2985E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A8EE2B11D5F908800C2985E /* PBXTargetDependency */,
+			);
+			name = "DelegateProxyTests-macOS";
+			productName = "DelegateProxyTests-macOS";
+			productReference = 2A8EE2AA1D5F908800C2985E /* DelegateProxyTests-macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -262,6 +315,9 @@
 					2A8EE28D1D5F8F9100C2985E = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
+					2A8EE2A91D5F908800C2985E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 2A14F8471D57B61B00656679 /* Build configuration list for PBXProject "DelegateProxy" */;
@@ -279,6 +335,7 @@
 				2A8EE2261D5F8AB400C2985E /* DelegateProxy-iOS */,
 				2A18B3641D5E5DF200AC312F /* DelegateProxyTests-iOS */,
 				2A8EE28D1D5F8F9100C2985E /* DelegateProxy-macOS */,
+				2A8EE2A91D5F908800C2985E /* DelegateProxyTests-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +356,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2A8EE28C1D5F8F9100C2985E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8EE2B71D5F90B500C2985E /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A8EE2A81D5F908800C2985E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,7 +411,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A8EE2A61D5F908800C2985E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8EE2B81D5F919F00C2985E /* DelegateProxyTests.swift in Sources */,
+				2A8EE2B91D5F919F00C2985E /* DelegateForwardableTests.swift in Sources */,
+				2A8EE2BA1D5F919F00C2985E /* DelegateTester.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A8EE2B11D5F908800C2985E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A8EE28D1D5F8F9100C2985E /* DelegateProxy-macOS */;
+			targetProxy = 2A8EE2B01D5F908800C2985E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2A14F8531D57B61B00656679 /* Debug */ = {
@@ -445,10 +528,13 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = "Configurations/DelegateProxyTests-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxyTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -457,10 +543,13 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = "Configurations/DelegateProxyTests-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxyTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -476,9 +565,12 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxy-iOS";
 				PRODUCT_NAME = DelegateProxy;
 				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -494,9 +586,12 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxy-iOS";
 				PRODUCT_NAME = DelegateProxy;
 				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -513,11 +608,13 @@
 				INFOPLIST_FILE = "Configurations/DelegateProxy-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxy-macOS";
 				PRODUCT_NAME = DelegateProxy;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -534,11 +631,45 @@
 				INFOPLIST_FILE = "Configurations/DelegateProxy-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxy-macOS";
 				PRODUCT_NAME = DelegateProxy;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		2A8EE2B31D5F908800C2985E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Configurations/DelegateProxyTests-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxyTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		2A8EE2B41D5F908800C2985E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Configurations/DelegateProxyTests-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxyTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -577,6 +708,14 @@
 			buildConfigurations = (
 				2A8EE2931D5F8F9100C2985E /* Debug */,
 				2A8EE2941D5F8F9100C2985E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2A8EE2B21D5F908800C2985E /* Build configuration list for PBXNativeTarget "DelegateProxyTests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A8EE2B31D5F908800C2985E /* Debug */,
+				2A8EE2B41D5F908800C2985E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
