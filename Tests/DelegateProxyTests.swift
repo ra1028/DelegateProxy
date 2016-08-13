@@ -61,6 +61,33 @@ final class DelegateProxyTests: XCTestCase {
         XCTAssertEqual(bool, true)
     }
     
+    func testUnreceivedMethod() {
+        let proxy = TestDelegateProxy()
+        let tester = DelegateTester()
+        tester.delegate = proxy
+        
+        tester.sendIntEvent(1)
+    }
+    
+    func testCanNotReceiveImplementedMethod() {
+        let proxy = DelegateImplementedProxy()
+        let tester = DelegateTester()
+        tester.delegate = proxy
+        
+        var value = 0
+        proxy.receive(#selector(TestDelegate.intEvent(_:))) {
+            guard let arg: Int = $0.value(0) else {
+                XCTAssert(false, "Invalid argument type")
+                return
+            }
+            value += arg
+        }
+        
+        tester.sendIntEvent(1)
+        XCTAssertEqual(value, 0)
+        XCTAssertEqual(proxy.receivedValues, [1])
+    }
+    
     func testConcurrentThreadDelegate() {
         let proxy = TestDelegateProxy()
         let tester = DelegateTester()
@@ -75,16 +102,20 @@ final class DelegateProxyTests: XCTestCase {
             value += arg
         }
         
-        let expectation = expectationWithDescription("Value update 100 times in concurrent thread")
+        let expectation = expectationWithDescription("Receive delegate event in concurrent thread")
         let group = dispatch_group_create()
         
-        (0..<100).forEach {
+        let repeatTimes = 100
+        
+        (0..<repeatTimes).forEach {
             let queue = dispatch_queue_create("queue\($0)", DISPATCH_QUEUE_CONCURRENT)
             dispatch_group_async(group, queue) { tester.sendIntEvent(1) }
         }
         
         dispatch_group_notify(group, dispatch_get_main_queue(), expectation.fulfill)
         
-        waitForExpectationsWithTimeout(15) { _ in XCTAssertEqual(value, 100) }
+        waitForExpectationsWithTimeout(1) { XCTAssertNil($0) }
+        
+        XCTAssertEqual(value, repeatTimes)
     }
 }

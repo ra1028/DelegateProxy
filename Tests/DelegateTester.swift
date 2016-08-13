@@ -38,6 +38,13 @@ final class InheritedDelegateTester: NSObject {
 
 final class TestDelegateProxy: DelegateProxy, TestDelegate {}
 final class TestInheritedDelegateProxy: DelegateProxy, TestInheritedDelegate {}
+final class DelegateImplementedProxy: DelegateProxy, TestDelegate {
+    private(set) var receivedValues = [Int]()
+    
+    func intEvent(value: Int) {
+        receivedValues.append(value)
+    }
+}
 
 extension DelegateTester: DelegateForwardable {
     static func createDelegateProxy() -> TestDelegateProxy {
