@@ -61,14 +61,6 @@ final class DelegateProxyTests: XCTestCase {
         XCTAssertEqual(bool, true)
     }
     
-    func testUnreceivedMethod() {
-        let proxy = TestDelegateProxy()
-        let tester = DelegateTester()
-        tester.delegate = proxy
-        
-        tester.sendIntEvent(1)
-    }
-    
     func testCanNotReceiveImplementedMethod() {
         let proxy = DelegateImplementedProxy()
         let tester = DelegateTester()
