@@ -204,11 +204,11 @@
 				2A18B3421D5E598300AC312F /* Receivable.swift */,
 				2A18B3431D5E598300AC312F /* Receiver.swift */,
 				2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */,
-				2A18B33B1D5E598300AC312F /* DelegateProxy.h */,
 				2A18B33D1D5E598300AC312F /* DPDelegateProxy.h */,
 				2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */,
 				2A18B33F1D5E598300AC312F /* DPRuntime.h */,
 				2A18B3401D5E598300AC312F /* DPRuntime.m */,
+				2A18B33B1D5E598300AC312F /* DelegateProxy.h */,
 				2A18B3411D5E598300AC312F /* Info.plist */,
 			);
 			path = Sources;
@@ -230,10 +230,10 @@
 				2A8EE2301D5F8B5600C2985E /* DelegateProxy-iOS */,
 				2A8EE2991D5F8FC400C2985E /* DelegateProxy-macOS */,
 				2A8EE2D21D5F923C00C2985E /* DelegateProxy-tvOS */,
+				2A8EE2F71D5F949400C2985E /* DelegateProxy-watchOS */,
 				2A8EE2331D5F8B5600C2985E /* DelegateProxyTests-iOS */,
 				2A8EE2B51D5F90B500C2985E /* DelegateProxyTests-macOS */,
 				2A8EE2E41D5F92F600C2985E /* DelegateProxyTests-tvOS */,
-				2A8EE2F71D5F949400C2985E /* DelegateProxy-watchOS */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
