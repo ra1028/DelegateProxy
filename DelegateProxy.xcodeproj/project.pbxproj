@@ -7,31 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A14F86F1D57B86300656679 /* DelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A14F86A1D57B86300656679 /* DelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A14F8701D57B86300656679 /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A14F86B1D57B86300656679 /* DelegateProxy.swift */; };
-		2A14F8711D57B86300656679 /* DPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A14F86C1D57B86300656679 /* DPRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A14F8721D57B86300656679 /* DPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A14F86D1D57B86300656679 /* DPRuntime.m */; };
-		2AFA3CAA1D5A3CEF00683E15 /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CA91D5A3CEF00683E15 /* Receivable.swift */; };
-		2AFA3CAC1D5A3D1400683E15 /* Receiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CAB1D5A3D1400683E15 /* Receiver.swift */; };
-		2AFA3CAE1D5B5C4500683E15 /* DelegateForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CAD1D5B5C4500683E15 /* DelegateForwardable.swift */; };
-		2AFA3CB01D5B6EE900683E15 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA3CAF1D5B6EE900683E15 /* Arguments.swift */; };
-		6B16C50E1D585ED9001BC28B /* DPDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B16C50D1D585ED9001BC28B /* DPDelegateProxy.m */; };
-		6B16C5101D586279001BC28B /* DPDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B16C50F1D585EE6001BC28B /* DPDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A18B3531D5E59DE00AC312F /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3391D5E598300AC312F /* Arguments.swift */; };
+		2A18B3541D5E59DE00AC312F /* DelegateForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */; };
+		2A18B3551D5E59DE00AC312F /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33C1D5E598300AC312F /* DelegateProxy.swift */; };
+		2A18B3561D5E59DE00AC312F /* DPDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */; };
+		2A18B3571D5E59DE00AC312F /* DPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3401D5E598300AC312F /* DPRuntime.m */; };
+		2A18B3581D5E59DE00AC312F /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3421D5E598300AC312F /* Receivable.swift */; };
+		2A18B3591D5E59DE00AC312F /* Receiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3431D5E598300AC312F /* Receiver.swift */; };
+		2A18B35A1D5E59EC00AC312F /* DelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33B1D5E598300AC312F /* DelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A18B35B1D5E59EC00AC312F /* DPDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33D1D5E598300AC312F /* DPDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A18B35C1D5E59EC00AC312F /* DPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33F1D5E598300AC312F /* DPRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A18B36A1D5E5DF200AC312F /* DelegateProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A14F84D1D57B61B00656679 /* DelegateProxy.framework */; };
+		2A18B3701D5E5E2E00AC312F /* DelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */; };
+		2A18B3711D5E5E2E00AC312F /* DelegateForwardableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */; };
+		2A18B3721D5E5E2E00AC312F /* DelegateTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A18B36B1D5E5DF200AC312F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A14F8441D57B61B00656679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A14F84C1D57B61B00656679;
+			remoteInfo = DelegateProxy;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2A14F84D1D57B61B00656679 /* DelegateProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DelegateProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A14F86A1D57B86300656679 /* DelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelegateProxy.h; sourceTree = "<group>"; };
-		2A14F86B1D57B86300656679 /* DelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
-		2A14F86C1D57B86300656679 /* DPRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRuntime.h; sourceTree = "<group>"; };
-		2A14F86D1D57B86300656679 /* DPRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRuntime.m; sourceTree = "<group>"; };
-		2A14F86E1D57B86300656679 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2AFA3CA91D5A3CEF00683E15 /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
-		2AFA3CAB1D5A3D1400683E15 /* Receiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receiver.swift; sourceTree = "<group>"; };
-		2AFA3CAD1D5B5C4500683E15 /* DelegateForwardable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateForwardable.swift; sourceTree = "<group>"; };
-		2AFA3CAF1D5B6EE900683E15 /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
-		6B16C50D1D585ED9001BC28B /* DPDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDelegateProxy.m; sourceTree = "<group>"; };
-		6B16C50F1D585EE6001BC28B /* DPDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPDelegateProxy.h; sourceTree = "<group>"; };
+		2A18B3391D5E598300AC312F /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
+		2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateForwardable.swift; sourceTree = "<group>"; };
+		2A18B33B1D5E598300AC312F /* DelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelegateProxy.h; sourceTree = "<group>"; };
+		2A18B33C1D5E598300AC312F /* DelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
+		2A18B33D1D5E598300AC312F /* DPDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDelegateProxy.h; sourceTree = "<group>"; };
+		2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDelegateProxy.m; sourceTree = "<group>"; };
+		2A18B33F1D5E598300AC312F /* DPRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRuntime.h; sourceTree = "<group>"; };
+		2A18B3401D5E598300AC312F /* DPRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRuntime.m; sourceTree = "<group>"; };
+		2A18B3411D5E598300AC312F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A18B3421D5E598300AC312F /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
+		2A18B3431D5E598300AC312F /* Receiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receiver.swift; sourceTree = "<group>"; };
+		2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateForwardableTests.swift; sourceTree = "<group>"; };
+		2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProxyTests.swift; sourceTree = "<group>"; };
+		2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateTester.swift; sourceTree = "<group>"; };
+		2A18B3651D5E5DF200AC312F /* DelegateProxyTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DelegateProxyTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A18B3691D5E5DF200AC312F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,13 +61,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A18B3621D5E5DF200AC312F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A18B36A1D5E5DF200AC312F /* DelegateProxy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2A14F8431D57B61B00656679 = {
 			isa = PBXGroup;
 			children = (
-				2A14F8691D57B86300656679 /* DelegateProxy */,
+				2A18B3381D5E598300AC312F /* Sources */,
+				2A18B34C1D5E599500AC312F /* Tests */,
+				2A18B3661D5E5DF200AC312F /* DelegateProxyTests-iOS */,
 				2A14F84E1D57B61B00656679 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,26 +86,45 @@
 			isa = PBXGroup;
 			children = (
 				2A14F84D1D57B61B00656679 /* DelegateProxy.framework */,
+				2A18B3651D5E5DF200AC312F /* DelegateProxyTests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A14F8691D57B86300656679 /* DelegateProxy */ = {
+		2A18B3381D5E598300AC312F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2A14F86B1D57B86300656679 /* DelegateProxy.swift */,
-				2AFA3CAF1D5B6EE900683E15 /* Arguments.swift */,
-				2AFA3CAB1D5A3D1400683E15 /* Receiver.swift */,
-				2AFA3CA91D5A3CEF00683E15 /* Receivable.swift */,
-				2AFA3CAD1D5B5C4500683E15 /* DelegateForwardable.swift */,
-				6B16C50F1D585EE6001BC28B /* DPDelegateProxy.h */,
-				6B16C50D1D585ED9001BC28B /* DPDelegateProxy.m */,
-				2A14F86C1D57B86300656679 /* DPRuntime.h */,
-				2A14F86D1D57B86300656679 /* DPRuntime.m */,
-				2A14F86A1D57B86300656679 /* DelegateProxy.h */,
-				2A14F86E1D57B86300656679 /* Info.plist */,
+				2A18B33C1D5E598300AC312F /* DelegateProxy.swift */,
+				2A18B3391D5E598300AC312F /* Arguments.swift */,
+				2A18B3421D5E598300AC312F /* Receivable.swift */,
+				2A18B3431D5E598300AC312F /* Receiver.swift */,
+				2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */,
+				2A18B33B1D5E598300AC312F /* DelegateProxy.h */,
+				2A18B33D1D5E598300AC312F /* DPDelegateProxy.h */,
+				2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */,
+				2A18B33F1D5E598300AC312F /* DPRuntime.h */,
+				2A18B3401D5E598300AC312F /* DPRuntime.m */,
+				2A18B3411D5E598300AC312F /* Info.plist */,
 			);
-			path = DelegateProxy;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2A18B34C1D5E599500AC312F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */,
+				2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */,
+				2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		2A18B3661D5E5DF200AC312F /* DelegateProxyTests-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2A18B3691D5E5DF200AC312F /* Info.plist */,
+			);
+			path = "DelegateProxyTests-iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +134,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A14F8711D57B86300656679 /* DPRuntime.h in Headers */,
-				2A14F86F1D57B86300656679 /* DelegateProxy.h in Headers */,
-				6B16C5101D586279001BC28B /* DPDelegateProxy.h in Headers */,
+				2A18B35A1D5E59EC00AC312F /* DelegateProxy.h in Headers */,
+				2A18B35B1D5E59EC00AC312F /* DPDelegateProxy.h in Headers */,
+				2A18B35C1D5E59EC00AC312F /* DPRuntime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,16 +161,39 @@
 			productReference = 2A14F84D1D57B61B00656679 /* DelegateProxy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		2A18B3641D5E5DF200AC312F /* DelegateProxyTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A18B36D1D5E5DF200AC312F /* Build configuration list for PBXNativeTarget "DelegateProxyTests-iOS" */;
+			buildPhases = (
+				2A18B3611D5E5DF200AC312F /* Sources */,
+				2A18B3621D5E5DF200AC312F /* Frameworks */,
+				2A18B3631D5E5DF200AC312F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A18B36C1D5E5DF200AC312F /* PBXTargetDependency */,
+			);
+			name = "DelegateProxyTests-iOS";
+			productName = "DelegateProxyTests-iOS";
+			productReference = 2A18B3651D5E5DF200AC312F /* DelegateProxyTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2A14F8441D57B61B00656679 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Ryo Aoyama";
 				TargetAttributes = {
 					2A14F84C1D57B61B00656679 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 35SS6N9UMP;
+					};
+					2A18B3641D5E5DF200AC312F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 35SS6N9UMP;
 					};
@@ -141,12 +212,20 @@
 			projectRoot = "";
 			targets = (
 				2A14F84C1D57B61B00656679 /* DelegateProxy */,
+				2A18B3641D5E5DF200AC312F /* DelegateProxyTests-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2A14F84B1D57B61B00656679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A18B3631D5E5DF200AC312F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -160,17 +239,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AFA3CAE1D5B5C4500683E15 /* DelegateForwardable.swift in Sources */,
-				6B16C50E1D585ED9001BC28B /* DPDelegateProxy.m in Sources */,
-				2AFA3CAA1D5A3CEF00683E15 /* Receivable.swift in Sources */,
-				2AFA3CB01D5B6EE900683E15 /* Arguments.swift in Sources */,
-				2AFA3CAC1D5A3D1400683E15 /* Receiver.swift in Sources */,
-				2A14F8721D57B86300656679 /* DPRuntime.m in Sources */,
-				2A14F8701D57B86300656679 /* DelegateProxy.swift in Sources */,
+				2A18B3531D5E59DE00AC312F /* Arguments.swift in Sources */,
+				2A18B3541D5E59DE00AC312F /* DelegateForwardable.swift in Sources */,
+				2A18B3551D5E59DE00AC312F /* DelegateProxy.swift in Sources */,
+				2A18B3561D5E59DE00AC312F /* DPDelegateProxy.m in Sources */,
+				2A18B3571D5E59DE00AC312F /* DPRuntime.m in Sources */,
+				2A18B3581D5E59DE00AC312F /* Receivable.swift in Sources */,
+				2A18B3591D5E59DE00AC312F /* Receiver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A18B3611D5E5DF200AC312F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A18B3701D5E5E2E00AC312F /* DelegateProxyTests.swift in Sources */,
+				2A18B3711D5E5E2E00AC312F /* DelegateForwardableTests.swift in Sources */,
+				2A18B3721D5E5E2E00AC312F /* DelegateTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A18B36C1D5E5DF200AC312F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A14F84C1D57B61B00656679 /* DelegateProxy */;
+			targetProxy = 2A18B36B1D5E5DF200AC312F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2A14F8531D57B61B00656679 /* Debug */ = {
@@ -273,7 +370,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DelegateProxy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -293,13 +390,37 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DelegateProxy/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryo.DelegateProxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2A18B36E1D5E5DF200AC312F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				INFOPLIST_FILE = "DelegateProxyTests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxyTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2A18B36F1D5E5DF200AC312F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				INFOPLIST_FILE = "DelegateProxyTests-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxyTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -323,6 +444,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2A18B36D1D5E5DF200AC312F /* Build configuration list for PBXNativeTarget "DelegateProxyTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A18B36E1D5E5DF200AC312F /* Debug */,
+				2A18B36F1D5E5DF200AC312F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

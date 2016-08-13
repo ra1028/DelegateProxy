@@ -9,10 +9,6 @@
 public class DelegateProxy: DPDelegateProxy {
     private static var selectorsOfClass = [NSValue: Set<Selector>]()
     
-    private static var classValue: NSValue {
-        return .init(nonretainedObject: self)
-    }
-    
     private var mutex = pthread_mutex_t()
     
     private var receivableOfSelector = [Selector: Receivable]()
@@ -50,11 +46,14 @@ public extension DelegateProxy {
         }
         
         if !selectors.isEmpty {
-            selectorsOfClass[classValue] = selectors
+            selectorsOfClass[classValue()] = selectors
         }
     }
     
     final override func interceptedSelector(selector: Selector, arguments: [AnyObject]) {
+        lock()
+        defer { unlock() }
+        
         receivableOfSelector[selector]?.send(Arguments(arguments))
     }
     
@@ -83,6 +82,10 @@ public extension DelegateProxy {
 }
 
 private extension DelegateProxy {
+    static func classValue() -> NSValue {
+        return .init(nonretainedObject: self)
+    }
+    
     static func collectSelectors(p: Protocol) -> Set<Selector> {
         var selectors = Set<Selector>()
         
@@ -113,7 +116,7 @@ private extension DelegateProxy {
         lock()
         defer { unlock() }
         
-        let allowedSelectors = self.dynamicType.selectorsOfClass[self.dynamicType.classValue]
+        let allowedSelectors = self.dynamicType.selectorsOfClass[self.dynamicType.classValue()]
         return allowedSelectors?.contains(selector) ?? false
     }
     
