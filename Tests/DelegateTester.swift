@@ -6,7 +6,7 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
-@testable import DelegateProxy
+import DelegateProxy
 
 @objc protocol TestDelegate {
     optional func intEvent(value: Int)

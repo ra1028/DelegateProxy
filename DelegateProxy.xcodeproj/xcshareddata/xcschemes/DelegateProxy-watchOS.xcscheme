@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A8EE2EE1D5F946F00C2985E"
-               BuildableName = "DelegateProxy-watchOS.framework"
+               BuildableName = "DelegateProxy.framework"
                BlueprintName = "DelegateProxy-watchOS"
                ReferencedContainer = "container:DelegateProxy.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A8EE2EE1D5F946F00C2985E"
-            BuildableName = "DelegateProxy-watchOS.framework"
+            BuildableName = "DelegateProxy.framework"
             BlueprintName = "DelegateProxy-watchOS"
             ReferencedContainer = "container:DelegateProxy.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A8EE2EE1D5F946F00C2985E"
-            BuildableName = "DelegateProxy-watchOS.framework"
+            BuildableName = "DelegateProxy.framework"
             BlueprintName = "DelegateProxy-watchOS"
             ReferencedContainer = "container:DelegateProxy.xcodeproj">
          </BuildableReference>

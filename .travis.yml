@@ -8,9 +8,9 @@ env:
 script:
   # - pod lib lint --allow-warnings --quick
   - set -o pipefail
-  - xcodebuild test -scheme DelegateProxy-macOS -configuration Release | xcpretty -c
-  - xcodebuild test -scheme DelegateProxy-iOS -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s' | xcpretty -c
-  - xcodebuild test -scheme DelegateProxy-tvOS -configuration Release -sdk appletvsimulator -destination "platform=tvOS Simulator,name=Apple TV 1080p" | xcpretty -c
+  - xcodebuild build test -scheme DelegateProxy-macOS -configuration Release -sdk macosx -destination 'platform=OS X,arch=x86_64' | xcpretty -c
+  - xcodebuild build test -scheme DelegateProxy-iOS -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s' | xcpretty -c
+  - xcodebuild build test -scheme DelegateProxy-tvOS -configuration Release -sdk appletvsimulator -destination "platform=tvOS Simulator,name=Apple TV 1080p" | xcpretty -c
   - xcodebuild build -scheme DelegateProxy-watchOS -configuration Release -sdk watchsimulator -destination 'platform=watchOS Simulator,name=Apple Watch - 38mm' | xcpretty -c
 
 notifications:
