@@ -46,6 +46,11 @@
 		2A8EE2D01D5F921E00C2985E /* DPDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33D1D5E598300AC312F /* DPDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A8EE2D11D5F921E00C2985E /* DPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33F1D5E598300AC312F /* DPRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A8EE2D41D5F923C00C2985E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A8EE2D31D5F923C00C2985E /* Info.plist */; };
+		2A8EE2DE1D5F92DF00C2985E /* DelegateProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8EE2C01D5F91F000C2985E /* DelegateProxy.framework */; };
+		2A8EE2E61D5F92F600C2985E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A8EE2E51D5F92F600C2985E /* Info.plist */; };
+		2A8EE2E71D5F930A00C2985E /* DelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */; };
+		2A8EE2E81D5F930A00C2985E /* DelegateForwardableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */; };
+		2A8EE2E91D5F930A00C2985E /* DelegateTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2A8EE28D1D5F8F9100C2985E;
 			remoteInfo = "DelegateProxy-macOS";
+		};
+		2A8EE2DF1D5F92DF00C2985E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A14F8441D57B61B00656679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A8EE2BF1D5F91F000C2985E;
+			remoteInfo = "DelegateProxy-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -83,6 +95,8 @@
 		2A8EE2B61D5F90B500C2985E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8EE2C01D5F91F000C2985E /* DelegateProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DelegateProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8EE2D31D5F923C00C2985E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A8EE2D91D5F92DF00C2985E /* DelegateProxyTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DelegateProxyTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A8EE2E51D5F92F600C2985E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A8EE2D61D5F92DF00C2985E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8EE2DE1D5F92DF00C2985E /* DelegateProxy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -143,6 +165,7 @@
 				2A8EE28E1D5F8F9100C2985E /* DelegateProxy.framework */,
 				2A8EE2AA1D5F908800C2985E /* DelegateProxyTests-macOS.xctest */,
 				2A8EE2C01D5F91F000C2985E /* DelegateProxy.framework */,
+				2A8EE2D91D5F92DF00C2985E /* DelegateProxyTests-tvOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +206,7 @@
 				2A8EE2D21D5F923C00C2985E /* DelegateProxy-tvOS */,
 				2A8EE2331D5F8B5600C2985E /* DelegateProxyTests-iOS */,
 				2A8EE2B51D5F90B500C2985E /* DelegateProxyTests-macOS */,
+				2A8EE2E41D5F92F600C2985E /* DelegateProxyTests-tvOS */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -225,6 +249,14 @@
 				2A8EE2D31D5F923C00C2985E /* Info.plist */,
 			);
 			path = "DelegateProxy-tvOS";
+			sourceTree = "<group>";
+		};
+		2A8EE2E41D5F92F600C2985E /* DelegateProxyTests-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				2A8EE2E51D5F92F600C2985E /* Info.plist */,
+			);
+			path = "DelegateProxyTests-tvOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +384,24 @@
 			productReference = 2A8EE2C01D5F91F000C2985E /* DelegateProxy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		2A8EE2D81D5F92DF00C2985E /* DelegateProxyTests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A8EE2E11D5F92DF00C2985E /* Build configuration list for PBXNativeTarget "DelegateProxyTests-tvOS" */;
+			buildPhases = (
+				2A8EE2D51D5F92DF00C2985E /* Sources */,
+				2A8EE2D61D5F92DF00C2985E /* Frameworks */,
+				2A8EE2D71D5F92DF00C2985E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A8EE2E01D5F92DF00C2985E /* PBXTargetDependency */,
+			);
+			name = "DelegateProxyTests-tvOS";
+			productName = "DelegateProxyTests-tvOS";
+			productReference = 2A8EE2D91D5F92DF00C2985E /* DelegateProxyTests-tvOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -380,6 +430,10 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 35SS6N9UMP;
 					};
+					2A8EE2D81D5F92DF00C2985E = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 35SS6N9UMP;
+					};
 				};
 			};
 			buildConfigurationList = 2A14F8471D57B61B00656679 /* Build configuration list for PBXProject "DelegateProxy" */;
@@ -399,6 +453,7 @@
 				2A8EE2BF1D5F91F000C2985E /* DelegateProxy-tvOS */,
 				2A18B3641D5E5DF200AC312F /* DelegateProxyTests-iOS */,
 				2A8EE2A91D5F908800C2985E /* DelegateProxyTests-macOS */,
+				2A8EE2D81D5F92DF00C2985E /* DelegateProxyTests-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -424,6 +479,7 @@
 			files = (
 				2A8EE2D41D5F923C00C2985E /* Info.plist in Resources */,
 				2A8EE2B71D5F90B500C2985E /* Info.plist in Resources */,
+				2A8EE2E61D5F92F600C2985E /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +491,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2A8EE2BE1D5F91F000C2985E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A8EE2D71D5F92DF00C2985E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -506,6 +569,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A8EE2D51D5F92DF00C2985E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8EE2E71D5F930A00C2985E /* DelegateProxyTests.swift in Sources */,
+				2A8EE2E81D5F930A00C2985E /* DelegateForwardableTests.swift in Sources */,
+				2A8EE2E91D5F930A00C2985E /* DelegateTester.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -513,6 +586,11 @@
 			isa = PBXTargetDependency;
 			target = 2A8EE28D1D5F8F9100C2985E /* DelegateProxy-macOS */;
 			targetProxy = 2A8EE2B01D5F908800C2985E /* PBXContainerItemProxy */;
+		};
+		2A8EE2E01D5F92DF00C2985E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A8EE2BF1D5F91F000C2985E /* DelegateProxy-tvOS */;
+			targetProxy = 2A8EE2DF1D5F92DF00C2985E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -802,6 +880,36 @@
 			};
 			name = Release;
 		};
+		2A8EE2E21D5F92DF00C2985E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = "Configurations/DelegateProxyTests-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxyTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		2A8EE2E31D5F92DF00C2985E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = "Configurations/DelegateProxyTests-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryo.DelegateProxyTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -853,6 +961,14 @@
 			buildConfigurations = (
 				2A8EE2C61D5F91F000C2985E /* Debug */,
 				2A8EE2C71D5F91F000C2985E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2A8EE2E11D5F92DF00C2985E /* Build configuration list for PBXNativeTarget "DelegateProxyTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A8EE2E21D5F92DF00C2985E /* Debug */,
+				2A8EE2E31D5F92DF00C2985E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
