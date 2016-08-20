@@ -1,5 +1,5 @@
 //
-//  DelegateForwardableTests.swift
+//  AssociatedDelegateProxyTests.swift
 //  DelegateProxy
 //
 //  Created by Ryo Aoyama on 8/13/16.
@@ -9,7 +9,7 @@
 import XCTest
 import DelegateProxy
 
-final class DelegateForwardableTests: XCTestCase {
+final class AssociatedDelegateProxyTests: XCTestCase {
     func testAssociatedProxy() {
         let tester = DelegateTester()
         let proxy1 = tester.delegateProxy

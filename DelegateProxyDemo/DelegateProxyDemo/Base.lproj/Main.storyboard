@@ -31,9 +31,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7z-KZ-3hY">
+                                <rect key="frame" x="175" y="150" width="250" height="300"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="LI0-23-XSn"/>
+                                    <constraint firstAttribute="height" constant="300" id="STa-LJ-hnG"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="b7z-KZ-3hY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1SK-ie-sVQ"/>
                             <constraint firstItem="Eqh-TP-xDs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="20p-ub-h2j"/>
                             <constraint firstItem="Eqh-TP-xDs" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="Dy6-C3-p5I"/>
                             <constraint firstItem="5yE-1K-kdX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Eb9-Ao-JVu"/>
@@ -44,6 +53,7 @@
                             <constraint firstItem="Eqh-TP-xDs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZoC-Is-eE8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5yE-1K-kdX" secondAttribute="bottom" id="ic1-LU-nwp"/>
                             <constraint firstItem="Eqh-TP-xDs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="qGa-Yl-9XP"/>
+                            <constraint firstItem="b7z-KZ-3hY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xIc-XK-Sag"/>
                             <constraint firstAttribute="trailing" secondItem="5yE-1K-kdX" secondAttribute="trailing" id="zbR-95-4Z9"/>
                             <constraint firstItem="5yE-1K-kdX" firstAttribute="leading" secondItem="Eqh-TP-xDs" secondAttribute="trailing" id="zlE-OO-UZx"/>
                         </constraints>
@@ -59,10 +69,12 @@
                     <connections>
                         <outlet property="lTextView" destination="Eqh-TP-xDs" id="fAj-D1-m65"/>
                         <outlet property="rTextView" destination="5yE-1K-kdX" id="K5h-jq-wX9"/>
+                        <outlet property="scrollView" destination="b7z-KZ-3hY" id="WVa-AJ-wxS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="150" y="221"/>
         </scene>
     </scenes>
 </document>

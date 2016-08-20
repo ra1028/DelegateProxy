@@ -25,31 +25,50 @@ extension DelegateProxy {
     }
 }
 
-public final class TextViewDelegateProxy: DelegateProxy, UITextViewDelegate {}
+public final class TextViewDelegateProxy: DelegateProxy, UITextViewDelegate, DelegateProxyType {
+    public func resetDelegateProxy(owner: UITextView) {
+        owner.delegate = self
+    }
+}
+
+public final class ScrollViewDelegateProxy: DelegateProxy, UIScrollViewDelegate, DelegateProxyType {
+    public func resetDelegateProxy(owner: UIScrollView) {
+        owner.delegate = self
+    }
+}
 
 extension UITextView {
     var textChange: Signal<Arguments, NoError> {
         return delegateProxy.receiveSignal(#selector(UITextViewDelegate.textViewDidChange(_:)))
     }
+    
+    override var delegateProxy: DelegateProxy {
+        return TextViewDelegateProxy.proxyFor(self)
+    }
 }
 
-extension UITextView: DelegateForwardable {
-    public static func createDelegateProxy() -> TextViewDelegateProxy {
-        return .init()
-    }
-    
-    public func setDelegateProxy(proxy: TextViewDelegateProxy) {
-        delegate = proxy
+extension UIScrollView {
+    var delegateProxy: DelegateProxy {
+        return ScrollViewDelegateProxy.proxyFor(self)
     }
 }
 
 final class ViewController: UIViewController {
     @IBOutlet private weak var lTextView: UITextView!
     @IBOutlet private weak var rTextView: UITextView!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollView.contentSize = CGSize(
+            width: scrollView.bounds.width,
+            height: scrollView.bounds.height * 3
+        )
     }
 }
 
@@ -79,5 +98,11 @@ private extension ViewController {
             .ignoreNil()
             .skipRepeats()
             .observeNext { print("Right: \($0)")}
+        
+        scrollView.delegateProxy
+            .receiveSignal(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
+            .map { $0.value(0, as: UIScrollView.self)?.contentOffset.y }
+            .ignoreNil()
+            .observeNext { print("ContentOffset: \($0)") }
     }
 }

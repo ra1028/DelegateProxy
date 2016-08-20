@@ -36,8 +36,16 @@ final class InheritedDelegateTester: NSObject {
     }
 }
 
-final class TestDelegateProxy: DelegateProxy, TestDelegate {}
-final class TestInheritedDelegateProxy: DelegateProxy, TestInheritedDelegate {}
+final class TestDelegateProxy: DelegateProxy, TestDelegate, DelegateProxyType {
+    func resetDelegateProxy(owner: DelegateTester) {
+        owner.delegate = self
+    }
+}
+final class TestInheritedDelegateProxy: DelegateProxy, TestInheritedDelegate, DelegateProxyType {
+    func resetDelegateProxy(owner: InheritedDelegateTester) {
+        owner.delegate = self
+    }
+}
 final class DelegateImplementedProxy: DelegateProxy, TestDelegate {
     private(set) var receivedValues = [Int]()
     
@@ -46,12 +54,8 @@ final class DelegateImplementedProxy: DelegateProxy, TestDelegate {
     }
 }
 
-extension DelegateTester: DelegateForwardable {
-    static func createDelegateProxy() -> TestDelegateProxy {
-        return .init()
-    }
-    
-    func setDelegateProxy(delegateProxy: TestDelegateProxy) {
-        delegate = delegateProxy
+extension DelegateTester {
+    var delegateProxy: TestDelegateProxy {
+        return .proxyFor(self)
     }
 }

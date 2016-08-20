@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2A18B3701D5E5E2E00AC312F /* DelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */; };
-		2A18B3711D5E5E2E00AC312F /* DelegateForwardableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */; };
+		2A18B3711D5E5E2E00AC312F /* AssociatedDelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* AssociatedDelegateProxyTests.swift */; };
 		2A18B3721D5E5E2E00AC312F /* DelegateTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */; };
+		2A6750881D678E4E00E9F360 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6750871D678E4E00E9F360 /* DelegateProxyType.swift */; };
+		2A67508B1D67974A00E9F360 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6750871D678E4E00E9F360 /* DelegateProxyType.swift */; };
+		2A67508C1D67974A00E9F360 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6750871D678E4E00E9F360 /* DelegateProxyType.swift */; };
+		2A67508D1D67974B00E9F360 /* DelegateProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6750871D678E4E00E9F360 /* DelegateProxyType.swift */; };
 		2A8EE2381D5F8B9C00C2985E /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33C1D5E598300AC312F /* DelegateProxy.swift */; };
 		2A8EE2391D5F8B9C00C2985E /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3391D5E598300AC312F /* Arguments.swift */; };
 		2A8EE23A1D5F8B9C00C2985E /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3421D5E598300AC312F /* Receivable.swift */; };
 		2A8EE23B1D5F8B9C00C2985E /* Receiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3431D5E598300AC312F /* Receiver.swift */; };
-		2A8EE23C1D5F8B9C00C2985E /* DelegateForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */; };
 		2A8EE23D1D5F8B9C00C2985E /* DPDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */; };
 		2A8EE23E1D5F8B9C00C2985E /* DPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3401D5E598300AC312F /* DPRuntime.m */; };
 		2A8EE23F1D5F8BAA00C2985E /* DelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33B1D5E598300AC312F /* DelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,7 +27,6 @@
 		2A8EE29D1D5F902600C2985E /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3391D5E598300AC312F /* Arguments.swift */; };
 		2A8EE29E1D5F902600C2985E /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3421D5E598300AC312F /* Receivable.swift */; };
 		2A8EE29F1D5F902600C2985E /* Receiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3431D5E598300AC312F /* Receiver.swift */; };
-		2A8EE2A01D5F902600C2985E /* DelegateForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */; };
 		2A8EE2A11D5F902600C2985E /* DPDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */; };
 		2A8EE2A21D5F902600C2985E /* DPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3401D5E598300AC312F /* DPRuntime.m */; };
 		2A8EE2A31D5F903700C2985E /* DelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33B1D5E598300AC312F /* DelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,13 +34,12 @@
 		2A8EE2A51D5F903700C2985E /* DPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33F1D5E598300AC312F /* DPRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A8EE2AF1D5F908800C2985E /* DelegateProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8EE28E1D5F8F9100C2985E /* DelegateProxy.framework */; };
 		2A8EE2B81D5F919F00C2985E /* DelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */; };
-		2A8EE2B91D5F919F00C2985E /* DelegateForwardableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */; };
+		2A8EE2B91D5F919F00C2985E /* AssociatedDelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* AssociatedDelegateProxyTests.swift */; };
 		2A8EE2BA1D5F919F00C2985E /* DelegateTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */; };
 		2A8EE2C81D5F920900C2985E /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33C1D5E598300AC312F /* DelegateProxy.swift */; };
 		2A8EE2C91D5F920900C2985E /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3391D5E598300AC312F /* Arguments.swift */; };
 		2A8EE2CA1D5F920900C2985E /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3421D5E598300AC312F /* Receivable.swift */; };
 		2A8EE2CB1D5F920900C2985E /* Receiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3431D5E598300AC312F /* Receiver.swift */; };
-		2A8EE2CC1D5F920900C2985E /* DelegateForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */; };
 		2A8EE2CD1D5F920900C2985E /* DPDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */; };
 		2A8EE2CE1D5F920900C2985E /* DPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3401D5E598300AC312F /* DPRuntime.m */; };
 		2A8EE2CF1D5F921E00C2985E /* DelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33B1D5E598300AC312F /* DelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,13 +47,12 @@
 		2A8EE2D11D5F921E00C2985E /* DPRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33F1D5E598300AC312F /* DPRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A8EE2DE1D5F92DF00C2985E /* DelegateProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8EE2C01D5F91F000C2985E /* DelegateProxy.framework */; };
 		2A8EE2E71D5F930A00C2985E /* DelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */; };
-		2A8EE2E81D5F930A00C2985E /* DelegateForwardableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */; };
+		2A8EE2E81D5F930A00C2985E /* AssociatedDelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* AssociatedDelegateProxyTests.swift */; };
 		2A8EE2E91D5F930A00C2985E /* DelegateTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */; };
 		2A8EE2FA1D5F94A600C2985E /* DelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33C1D5E598300AC312F /* DelegateProxy.swift */; };
 		2A8EE2FB1D5F94A600C2985E /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3391D5E598300AC312F /* Arguments.swift */; };
 		2A8EE2FC1D5F94A600C2985E /* Receivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3421D5E598300AC312F /* Receivable.swift */; };
 		2A8EE2FD1D5F94A600C2985E /* Receiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3431D5E598300AC312F /* Receiver.swift */; };
-		2A8EE2FE1D5F94A600C2985E /* DelegateForwardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */; };
 		2A8EE2FF1D5F94A600C2985E /* DPDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */; };
 		2A8EE3001D5F94A600C2985E /* DPRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B3401D5E598300AC312F /* DPRuntime.m */; };
 		2A8EE3011D5F94AD00C2985E /* DelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A18B33B1D5E598300AC312F /* DelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,7 +87,6 @@
 
 /* Begin PBXFileReference section */
 		2A18B3391D5E598300AC312F /* Arguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
-		2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateForwardable.swift; sourceTree = "<group>"; };
 		2A18B33B1D5E598300AC312F /* DelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelegateProxy.h; sourceTree = "<group>"; };
 		2A18B33C1D5E598300AC312F /* DelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProxy.swift; sourceTree = "<group>"; };
 		2A18B33D1D5E598300AC312F /* DPDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDelegateProxy.h; sourceTree = "<group>"; };
@@ -97,10 +96,11 @@
 		2A18B3411D5E598300AC312F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A18B3421D5E598300AC312F /* Receivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receivable.swift; sourceTree = "<group>"; };
 		2A18B3431D5E598300AC312F /* Receiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receiver.swift; sourceTree = "<group>"; };
-		2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateForwardableTests.swift; sourceTree = "<group>"; };
+		2A18B34D1D5E599500AC312F /* AssociatedDelegateProxyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedDelegateProxyTests.swift; sourceTree = "<group>"; };
 		2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProxyTests.swift; sourceTree = "<group>"; };
 		2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateTester.swift; sourceTree = "<group>"; };
 		2A18B3651D5E5DF200AC312F /* DelegateProxyTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DelegateProxyTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A6750871D678E4E00E9F360 /* DelegateProxyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProxyType.swift; sourceTree = "<group>"; };
 		2A8EE2271D5F8AB400C2985E /* DelegateProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DelegateProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8EE2321D5F8B5600C2985E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8EE2341D5F8B5600C2985E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,10 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				2A18B33C1D5E598300AC312F /* DelegateProxy.swift */,
+				2A6750871D678E4E00E9F360 /* DelegateProxyType.swift */,
 				2A18B3391D5E598300AC312F /* Arguments.swift */,
 				2A18B3421D5E598300AC312F /* Receivable.swift */,
 				2A18B3431D5E598300AC312F /* Receiver.swift */,
-				2A18B33A1D5E598300AC312F /* DelegateForwardable.swift */,
 				2A18B33D1D5E598300AC312F /* DPDelegateProxy.h */,
 				2A18B33E1D5E598300AC312F /* DPDelegateProxy.m */,
 				2A18B33F1D5E598300AC312F /* DPRuntime.h */,
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */,
-				2A18B34D1D5E599500AC312F /* DelegateForwardableTests.swift */,
+				2A18B34D1D5E599500AC312F /* AssociatedDelegateProxyTests.swift */,
 				2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */,
 			);
 			path = Tests;
@@ -585,7 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A18B3701D5E5E2E00AC312F /* DelegateProxyTests.swift in Sources */,
-				2A18B3711D5E5E2E00AC312F /* DelegateForwardableTests.swift in Sources */,
+				2A18B3711D5E5E2E00AC312F /* AssociatedDelegateProxyTests.swift in Sources */,
 				2A18B3721D5E5E2E00AC312F /* DelegateTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,10 +595,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EE2381D5F8B9C00C2985E /* DelegateProxy.swift in Sources */,
+				2A6750881D678E4E00E9F360 /* DelegateProxyType.swift in Sources */,
 				2A8EE2391D5F8B9C00C2985E /* Arguments.swift in Sources */,
 				2A8EE23A1D5F8B9C00C2985E /* Receivable.swift in Sources */,
 				2A8EE23B1D5F8B9C00C2985E /* Receiver.swift in Sources */,
-				2A8EE23C1D5F8B9C00C2985E /* DelegateForwardable.swift in Sources */,
 				2A8EE23D1D5F8B9C00C2985E /* DPDelegateProxy.m in Sources */,
 				2A8EE23E1D5F8B9C00C2985E /* DPRuntime.m in Sources */,
 			);
@@ -609,10 +609,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EE29C1D5F902600C2985E /* DelegateProxy.swift in Sources */,
+				2A67508B1D67974A00E9F360 /* DelegateProxyType.swift in Sources */,
 				2A8EE29D1D5F902600C2985E /* Arguments.swift in Sources */,
 				2A8EE29E1D5F902600C2985E /* Receivable.swift in Sources */,
 				2A8EE29F1D5F902600C2985E /* Receiver.swift in Sources */,
-				2A8EE2A01D5F902600C2985E /* DelegateForwardable.swift in Sources */,
 				2A8EE2A11D5F902600C2985E /* DPDelegateProxy.m in Sources */,
 				2A8EE2A21D5F902600C2985E /* DPRuntime.m in Sources */,
 			);
@@ -623,7 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EE2B81D5F919F00C2985E /* DelegateProxyTests.swift in Sources */,
-				2A8EE2B91D5F919F00C2985E /* DelegateForwardableTests.swift in Sources */,
+				2A8EE2B91D5F919F00C2985E /* AssociatedDelegateProxyTests.swift in Sources */,
 				2A8EE2BA1D5F919F00C2985E /* DelegateTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,10 +633,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EE2C81D5F920900C2985E /* DelegateProxy.swift in Sources */,
+				2A67508C1D67974A00E9F360 /* DelegateProxyType.swift in Sources */,
 				2A8EE2C91D5F920900C2985E /* Arguments.swift in Sources */,
 				2A8EE2CA1D5F920900C2985E /* Receivable.swift in Sources */,
 				2A8EE2CB1D5F920900C2985E /* Receiver.swift in Sources */,
-				2A8EE2CC1D5F920900C2985E /* DelegateForwardable.swift in Sources */,
 				2A8EE2CD1D5F920900C2985E /* DPDelegateProxy.m in Sources */,
 				2A8EE2CE1D5F920900C2985E /* DPRuntime.m in Sources */,
 			);
@@ -647,7 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EE2E71D5F930A00C2985E /* DelegateProxyTests.swift in Sources */,
-				2A8EE2E81D5F930A00C2985E /* DelegateForwardableTests.swift in Sources */,
+				2A8EE2E81D5F930A00C2985E /* AssociatedDelegateProxyTests.swift in Sources */,
 				2A8EE2E91D5F930A00C2985E /* DelegateTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,10 +657,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A8EE2FA1D5F94A600C2985E /* DelegateProxy.swift in Sources */,
+				2A67508D1D67974B00E9F360 /* DelegateProxyType.swift in Sources */,
 				2A8EE2FB1D5F94A600C2985E /* Arguments.swift in Sources */,
 				2A8EE2FC1D5F94A600C2985E /* Receivable.swift in Sources */,
 				2A8EE2FD1D5F94A600C2985E /* Receiver.swift in Sources */,
-				2A8EE2FE1D5F94A600C2985E /* DelegateForwardable.swift in Sources */,
 				2A8EE2FF1D5F94A600C2985E /* DPDelegateProxy.m in Sources */,
 				2A8EE3001D5F94A600C2985E /* DPRuntime.m in Sources */,
 			);

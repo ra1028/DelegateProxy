@@ -13,7 +13,7 @@ public class DelegateProxy: DPDelegateProxy {
     
     private var receivableOfSelector = [Selector: Receivable]()
     
-    public override init() {
+    public required override init() {
         super.init()
         let result = pthread_mutex_init(&mutex, nil)
         assert(result == 0, "Failed to initialize mutex on \(self): \(result).")
