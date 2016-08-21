@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A424BF91D6A0FFD00BBCF15 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A424BF81D6A0FFD00BBCF15 /* Bond.framework */; };
+		2A424BFA1D6A0FFD00BBCF15 /* Bond.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A424BF81D6A0FFD00BBCF15 /* Bond.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AA029C61D5CE89300C1437D /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA029C21D5CE72300C1437D /* ReactiveCocoa.framework */; };
 		2AA029C71D5CE89300C1437D /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA029C21D5CE72300C1437D /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AA029C81D5CE89300C1437D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA029C31D5CE72300C1437D /* Result.framework */; };
@@ -26,6 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2A424BFA1D6A0FFD00BBCF15 /* Bond.framework in Embed Frameworks */,
 				2AA029C71D5CE89300C1437D /* ReactiveCocoa.framework in Embed Frameworks */,
 				2AA029C91D5CE89300C1437D /* Result.framework in Embed Frameworks */,
 			);
@@ -35,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A424BF81D6A0FFD00BBCF15 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/iOS/Bond.framework; sourceTree = "<group>"; };
 		2AA029BF1D5CE28300C1437D /* DelegateProxy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DelegateProxy.framework; path = "../build/Debug-iphoneos/DelegateProxy.framework"; sourceTree = "<group>"; };
 		2AA029C21D5CE72300C1437D /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		2AA029C31D5CE72300C1437D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA226991D5D609700A3D317 /* DelegateProxy.framework in Frameworks */,
+				2A424BF91D6A0FFD00BBCF15 /* Bond.framework in Frameworks */,
 				2AA029C81D5CE89300C1437D /* Result.framework in Frameworks */,
 				2AA029C61D5CE89300C1437D /* ReactiveCocoa.framework in Frameworks */,
 			);
@@ -66,6 +71,7 @@
 		2AFA3CB11D5CDF1D00683E15 = {
 			isa = PBXGroup;
 			children = (
+				2A424BF81D6A0FFD00BBCF15 /* Bond.framework */,
 				2AFA3CBC1D5CDF1D00683E15 /* DelegateProxyDemo */,
 				2AFA3CBB1D5CDF1D00683E15 /* Products */,
 				CD45C304BCF540999F2DEC9D /* Frameworks */,
@@ -183,6 +189,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bond.framework",
 			);
 			outputPaths = (
 			);

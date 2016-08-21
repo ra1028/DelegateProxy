@@ -10,8 +10,9 @@ import UIKit
 import DelegateProxy
 import ReactiveCocoa
 import Result
+import Bond
 
-final class DelegateReceiver: Receivable {
+final class RACReceiver: Receivable {
     let (signal, observer) = Signal<Arguments, NoError>.pipe()
     
     func send(arguments: Arguments) {
@@ -19,9 +20,21 @@ final class DelegateReceiver: Receivable {
     }
 }
 
+final class BondReceiver: Receivable {
+    let subject = EventProducer<Arguments>()
+    
+    func send(arguments: Arguments) {
+        subject.next(arguments)
+    }
+}
+
 extension DelegateProxy {
-    func receiveSignal(selector: Selector...) -> Signal<Arguments, NoError> {
-        return DelegateReceiver().registerTo(proxy: self, selectors: selector).signal
+    func rac_receive(selector: Selector...) -> Signal<Arguments, NoError> {
+        return RACReceiver().registerTo(proxy: self, selectors: selector).signal
+    }
+    
+    func bnd_receive(selector: Selector...) -> EventProducer<Arguments> {
+        return BondReceiver().registerTo(proxy: self, selectors: selector).subject
     }
 }
 
@@ -37,9 +50,15 @@ public final class ScrollViewDelegateProxy: DelegateProxy, UIScrollViewDelegate,
     }
 }
 
+public final class WebViewDelegateProxy: DelegateProxy, UIWebViewDelegate, DelegateProxyType {
+    public func resetDelegateProxy(owner: UIWebView) {
+        owner.delegate = self
+    }
+}
+
 extension UITextView {
     var textChange: Signal<Arguments, NoError> {
-        return delegateProxy.receiveSignal(#selector(UITextViewDelegate.textViewDidChange(_:)))
+        return delegateProxy.rac_receive(#selector(UITextViewDelegate.textViewDidChange(_:)))
     }
     
     override var delegateProxy: DelegateProxy {
@@ -53,10 +72,17 @@ extension UIScrollView {
     }
 }
 
+extension UIWebView {
+    var delegateProxy: WebViewDelegateProxy {
+        return WebViewDelegateProxy.proxyFor(self)
+    }
+}
+
 final class ViewController: UIViewController {
     @IBOutlet private weak var lTextView: UITextView!
     @IBOutlet private weak var rTextView: UITextView!
     @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,17 +100,18 @@ final class ViewController: UIViewController {
 
 private extension ViewController {
     func configure() {
-//        lTextView.delegateProxy
-//            .receive(#selector(UITextViewDelegate.textViewDidChange(_:))) {
-//                guard let tv: UITextView = $0.value(0) else { return }
-//                print("Left: \(tv.text)")
-//        }
-//        
-//        rTextView.delegateProxy
-//            .receive(#selector(UITextViewDelegate.textViewDidChange(_:))) {
-//                guard let tv: UITextView = $0.value(0) else { return }
-//                print("Right: \(tv.text)")
-//        }
+        webView.loadRequest(.init(URL: NSURL(string: "https://www.google.com")!))
+        webView.delegateProxy
+            .rac_receive(#selector(UIWebViewDelegate.webViewDidFinishLoad(_:)))
+            .map { $0.value(0, as: UIWebView.self) }
+            .ignoreNil()
+            .observeNext { print("Page loaded: \($0)") }
+        
+        webView.scrollView.delegateProxy
+            .bnd_receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
+            .map { $0.value(0, as: UIScrollView.self)?.contentOffset.y }
+            .ignoreNil()
+            .observeNew { print("Web content offset: \($0)") }
         
         lTextView.textChange
             .map { $0.value(0, as: UITextView.self)?.text }
@@ -93,14 +120,14 @@ private extension ViewController {
             .observeNext { print("Left: \($0)") }
         
         rTextView.delegateProxy
-            .receiveSignal(#selector(UITextViewDelegate.textViewDidChange(_:)))
+            .rac_receive(#selector(UITextViewDelegate.textViewDidChange(_:)))
             .map { $0.value(0, as: UITextView.self)?.text }
             .ignoreNil()
             .skipRepeats()
             .observeNext { print("Right: \($0)")}
         
         scrollView.delegateProxy
-            .receiveSignal(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
+            .rac_receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
             .map { $0.value(0, as: UIScrollView.self)?.contentOffset.y }
             .ignoreNil()
             .observeNext { print("ContentOffset: \($0)") }

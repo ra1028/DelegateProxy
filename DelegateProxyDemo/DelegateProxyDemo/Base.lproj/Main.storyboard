@@ -32,13 +32,21 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7z-KZ-3hY">
-                                <rect key="frame" x="175" y="150" width="250" height="300"/>
+                                <rect key="frame" x="175" y="250" width="250" height="100"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="LI0-23-XSn"/>
-                                    <constraint firstAttribute="height" constant="300" id="STa-LJ-hnG"/>
+                                    <constraint firstAttribute="height" constant="100" id="STa-LJ-hnG"/>
                                 </constraints>
                             </scrollView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MN5-ZF-7XT">
+                                <rect key="frame" x="175" y="350" width="250" height="100"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="bzk-gW-d8Y"/>
+                                    <constraint firstAttribute="height" constant="100" id="ygn-rb-mF1"/>
+                                </constraints>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -51,6 +59,8 @@
                             <constraint firstItem="5yE-1K-kdX" firstAttribute="width" secondItem="Eqh-TP-xDs" secondAttribute="width" id="Od4-Bv-Gry"/>
                             <constraint firstItem="5yE-1K-kdX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PJE-Fu-vPC"/>
                             <constraint firstItem="Eqh-TP-xDs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZoC-Is-eE8"/>
+                            <constraint firstItem="MN5-ZF-7XT" firstAttribute="top" secondItem="b7z-KZ-3hY" secondAttribute="bottom" id="exP-bJ-ZcJ"/>
+                            <constraint firstItem="MN5-ZF-7XT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fh8-LE-jer"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5yE-1K-kdX" secondAttribute="bottom" id="ic1-LU-nwp"/>
                             <constraint firstItem="Eqh-TP-xDs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="qGa-Yl-9XP"/>
                             <constraint firstItem="b7z-KZ-3hY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xIc-XK-Sag"/>
@@ -70,6 +80,7 @@
                         <outlet property="lTextView" destination="Eqh-TP-xDs" id="fAj-D1-m65"/>
                         <outlet property="rTextView" destination="5yE-1K-kdX" id="K5h-jq-wX9"/>
                         <outlet property="scrollView" destination="b7z-KZ-3hY" id="WVa-AJ-wxS"/>
+                        <outlet property="webView" destination="MN5-ZF-7XT" id="UZq-Ba-DTl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
