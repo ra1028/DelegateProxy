@@ -38,20 +38,20 @@ extension DelegateProxy {
     }
 }
 
-public final class TextViewDelegateProxy: DelegateProxy, UITextViewDelegate, DelegateProxyType {
-    public func resetDelegateProxy(owner: UITextView) {
+final class TextViewDelegateProxy: DelegateProxy, UITextViewDelegate, DelegateProxyType {
+    func resetDelegateProxy(owner: UITextView) {
         owner.delegate = self
     }
 }
 
-public final class ScrollViewDelegateProxy: DelegateProxy, UIScrollViewDelegate, DelegateProxyType {
-    public func resetDelegateProxy(owner: UIScrollView) {
+final class ScrollViewDelegateProxy: DelegateProxy, UIScrollViewDelegate, DelegateProxyType {
+    func resetDelegateProxy(owner: UIScrollView) {
         owner.delegate = self
     }
 }
 
-public final class WebViewDelegateProxy: DelegateProxy, UIWebViewDelegate, DelegateProxyType {
-    public func resetDelegateProxy(owner: UIWebView) {
+final class WebViewDelegateProxy: DelegateProxy, UIWebViewDelegate, DelegateProxyType {
+    func resetDelegateProxy(owner: UIWebView) {
         owner.delegate = self
     }
 }
