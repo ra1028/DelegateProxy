@@ -30,11 +30,11 @@ final class BondReceiver: Receivable {
 
 extension DelegateProxy {
     func rac_receive(selector: Selector...) -> Signal<Arguments, NoError> {
-        return RACReceiver().registerTo(proxy: self, selectors: selector).signal
+        return RACReceiver().subscribeTo(proxy: self, selectors: selector).signal
     }
     
     func bnd_receive(selector: Selector...) -> EventProducer<Arguments> {
-        return BondReceiver().registerTo(proxy: self, selectors: selector).subject
+        return BondReceiver().subscribeTo(proxy: self, selectors: selector).subject
     }
 }
 
