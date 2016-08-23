@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   spec.homepage = 'https://github.com/ra1028'
   spec.summary = 'Proxy for receive delegate events more practically'
   spec.source = { :git => 'https://github.com/ra1028/DelegateProxy.git', :tag => spec.version.to_s }
-  spec.license = { :type => 'MIT', :file => 'LICENSE' }
+  spec.license = { :type => 'MIT', :file => 'LICENSE.md' }
   spec.platform = :ios, '8.0'
   spec.source_files = 'Sources/**/*.{h,m,swift}'
   spec.requires_arc = true
