@@ -6,7 +6,7 @@ env:
     - LC_CTYPE=en_US.UTF-8
 
 script:
-  # - pod lib lint --allow-warnings --quick
+  - pod lib lint --allow-warnings --quick
   - set -o pipefail
   - xcodebuild build test -scheme DelegateProxy-macOS -configuration Release -sdk macosx -destination 'platform=OS X,arch=x86_64' | xcpretty -c
   - xcodebuild build test -scheme DelegateProxy-iOS -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s' | xcpretty -c
