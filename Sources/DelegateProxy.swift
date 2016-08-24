@@ -30,21 +30,16 @@ public extension DelegateProxy {
         lock()
         defer { unlock() }
         
-        var selectors = Set<Selector>()
-        var targetClass: AnyClass? = self
-        
-        while let target = targetClass {
+        func selectorsForClass(cls: AnyClass) -> Set<Selector> {
             var protocolsCount: UInt32 = 0
-            let protocols = class_copyProtocolList(target, &protocolsCount)
+            let protocols = class_copyProtocolList(cls, &protocolsCount)
+            let selectors = selectorsForProtocols(protocols, count: Int(protocolsCount))
             
-            (0..<protocolsCount).forEach {
-                guard let selectorsForProtocol = protocols[Int($0)].map(collectSelectors) else { return }
-                selectors.unionInPlace(selectorsForProtocol)
-            }
-            
-            targetClass = class_getSuperclass(target)
+            guard let supercls = class_getSuperclass(cls) else { return selectors }
+            return selectors.union(selectorsForClass(supercls))
         }
         
+        let selectors = selectorsForClass(self)
         if !selectors.isEmpty {
             selectorsOfClass[classValue()] = selectors
         }
@@ -87,29 +82,26 @@ private extension DelegateProxy {
     }
     
     static func collectSelectors(p: Protocol) -> Set<Selector> {
-        var selectors = Set<Selector>()
-        
         var protocolMethodCount: UInt32 = 0
         let methodDescriptions = protocol_copyMethodDescriptionList(p, false, true, &protocolMethodCount)
-        
-        (0..<protocolMethodCount).forEach {
-            let methodDescription = methodDescriptions[Int($0)]
-            if DP_isMethodReturnTypeVoid(methodDescription) {
-                selectors.insert(methodDescription.name)
-            }
-        }
-        
-        free(methodDescriptions)
+        defer { free(methodDescriptions) }
         
         var protocolsCount: UInt32 = 0
         let protocols = protocol_copyProtocolList(p, &protocolsCount)
         
-        (0..<protocolsCount).forEach {
-            guard let selectorsForProtocol = protocols[Int($0)].map(collectSelectors) else { return }
-            selectors.unionInPlace(selectorsForProtocol)
-        }
+        let methodSelectors = (0..<protocolMethodCount)
+            .map { methodDescriptions[Int($0)] }
+            .filter(DP_isMethodReturnTypeVoid)
+            .map { $0.name }
         
-        return selectors
+        return selectorsForProtocols(protocols, count: Int(protocolsCount)).union(Set(methodSelectors))
+    }
+    
+    static func selectorsForProtocols(protocols: AutoreleasingUnsafeMutablePointer<Protocol?>, count: Int) -> Set<Selector> {
+        return (0..<count)
+            .flatMap { protocols[$0] }
+            .map(collectSelectors)
+            .reduce(Set<Selector>()) { $0.union($1) }
     }
     
     func canRespondToSelector(selector: Selector) -> Bool {

@@ -6,6 +6,7 @@
 <a href="http://cocoadocs.org/docsets/DelegateProxy"><img alt="Platform" src="https://img.shields.io/cocoapods/p/DelegateProxy.svg?style=flat"/></a><br>
 <a href="https://cocoapods.org/pods/DelegateProxy"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/DelegateProxy.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-yellow.svg?style=flat"/></a>
+<a href="https://codebeat.co/projects/github-com-ra1028-delegateproxy"><img alt="Codebeat" src="https://codebeat.co/badges/2cf2f4f3-2c4a-4999-aeb3-ca392d559dc6" /></a>
 <a href="https://github.com/ra1028/DelegateProxy/blob/master/LICENSE.md"><img alt="Lincense" src="http://img.shields.io/badge/license-MIT-000000.svg?style=flat"/></a>
 </p>  
 
