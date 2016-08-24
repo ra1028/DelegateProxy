@@ -6,9 +6,9 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
-@import Foundation;
-#import <DelegateProxy/DPRuntime.h>
-#import <DelegateProxy/DPDelegateProxy.h>
+#import <Foundation/Foundation.h>
+#import "DPRuntime.h"
+#import "DPDelegateProxy.h"
 
 FOUNDATION_EXPORT double DelegateProxyVersionNumber;
 FOUNDATION_EXPORT const unsigned char DelegateProxyVersionString[];

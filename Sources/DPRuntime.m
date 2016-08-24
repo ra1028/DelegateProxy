@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-#import <DelegateProxy/DPRuntime.h>
+#import "DPRuntime.h"
 
 BOOL DP_isMethodReturnTypeVoid(struct objc_method_description method) {
     return strncmp(method.types, @encode(void), 1) == 0;

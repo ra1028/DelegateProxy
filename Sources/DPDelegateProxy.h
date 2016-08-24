@@ -6,8 +6,6 @@
 //  Copyright © 2016 Ryo Aoyama. All rights reserved.
 //
 
-@import Foundation;
-
 @interface DPDelegateProxy: NSObject
 
 - (void)interceptedSelector:(SEL _Nonnull)selector arguments:(NSArray * _Nonnull)arguments;
