@@ -13,5 +13,8 @@ script:
   - xcodebuild build test -scheme DelegateProxy-tvOS -configuration Release -sdk appletvsimulator -destination "platform=tvOS Simulator,name=Apple TV 1080p" | xcpretty -c
   - xcodebuild build -scheme DelegateProxy-watchOS -configuration Release -sdk watchsimulator -destination 'platform=watchOS Simulator,name=Apple Watch - 38mm' | xcpretty -c
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 notifications:
  email: false
