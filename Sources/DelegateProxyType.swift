@@ -15,7 +15,7 @@ public protocol DelegateProxyType: class {
 }
 
 public extension DelegateProxyType where Self: DelegateProxy {
-    static func proxyFor(owner: Owner) -> Self {
+    static func proxyFor(_ owner: Owner) -> Self {
         let delegateProxy: Self
         if let associated = associatedProxyFor(owner) {
             delegateProxy = associated
@@ -24,12 +24,12 @@ public extension DelegateProxyType where Self: DelegateProxy {
             objc_setAssociatedObject(owner, &associatedKey, delegateProxy, .OBJC_ASSOCIATION_RETAIN)
         }
         
-        delegateProxy.resetDelegateProxy(owner)
+        delegateProxy.resetDelegateProxy(owner: owner)
         
         return delegateProxy
     }
     
-    private static func associatedProxyFor(owner: Owner) -> Self? {
+    private static func associatedProxyFor(_ owner: Owner) -> Self? {
         guard let object = objc_getAssociatedObject(owner, &associatedKey) else { return nil }
         if let proxy = object as? Self { return proxy }
         fatalError("Invalid associated object. Expected type is \(Self.self).")

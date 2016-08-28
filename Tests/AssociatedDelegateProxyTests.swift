@@ -24,7 +24,7 @@ final class AssociatedDelegateProxyTests: XCTestCase {
         var value = 0
         tester.delegateProxy
             .receive(#selector(TestDelegate.intEvent(_:))) {
-                guard let arg: Int = $0.value(0) else {
+                guard let arg: Int = $0.value(at: 0) else {
                     XCTAssert(false, "Invalid argument type")
                     return
                 }

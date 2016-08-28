@@ -17,7 +17,7 @@ final class DelegateProxyTests: XCTestCase {
         
         var value = 0
         proxy.receive(#selector(TestDelegate.intEvent(_:))) {
-            guard let arg: Int = $0.value(0) else {
+            guard let arg: Int = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
             }
@@ -38,7 +38,7 @@ final class DelegateProxyTests: XCTestCase {
         
         var int = 0
         proxy.receive(#selector(TestInheritedDelegate.intEvent(_:))) {
-            guard let arg: Int = $0.value(0) else {
+            guard let arg: Int = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
             }
@@ -47,7 +47,7 @@ final class DelegateProxyTests: XCTestCase {
         
         var bool = false
         proxy.receive(#selector(TestInheritedDelegate.boolEvent(_:))) {
-            guard let arg: Bool = $0.value(0) else {
+            guard let arg: Bool = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
             }
@@ -68,7 +68,7 @@ final class DelegateProxyTests: XCTestCase {
         
         var value = 0
         proxy.receive(#selector(TestDelegate.intEvent(_:))) {
-            guard let arg: Int = $0.value(0) else {
+            guard let arg: Int = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
             }
@@ -87,26 +87,26 @@ final class DelegateProxyTests: XCTestCase {
         
         var value = 0
         proxy.receive(#selector(TestDelegate.intEvent(_:))) {
-            guard let arg: Int = $0.value(0) else {
+            guard let arg: Int = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
             }
             value += arg
         }
         
-        let expectation = expectationWithDescription("Receive delegate event in concurrent thread")
-        let group = dispatch_group_create()
+        let exp = expectation(description: "Receive delegate event in concurrent thread")
+        let group = DispatchGroup()
         
         let repeatTimes = 100
         
         (0..<repeatTimes).forEach {
-            let queue = dispatch_queue_create("queue\($0)", DISPATCH_QUEUE_CONCURRENT)
-            dispatch_group_async(group, queue) { tester.sendIntEvent(1) }
+            let queue = DispatchQueue(label: "queue\($0)", attributes: .concurrent)
+            queue.async(group: group) { tester.sendIntEvent(1) }
         }
         
-        dispatch_group_notify(group, dispatch_get_main_queue(), expectation.fulfill)
+        group.notify(queue: .main, execute: exp.fulfill)
         
-        waitForExpectationsWithTimeout(1) { XCTAssertNil($0) }
+        waitForExpectations(timeout: 1) { XCTAssertNil($0) }
         
         XCTAssertEqual(value, repeatTimes)
     }
