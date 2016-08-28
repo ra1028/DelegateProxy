@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://travis-ci.org/ra1028/DelegateProxy"><img alt="Build Status" src="https://travis-ci.org/ra1028/DelegateProxy.svg?branch=master"/></a>
-<a href="https://developer.apple.com/swift"><img alt="Swift2.3" src="https://img.shields.io/badge/language-swift2.3-orange.svg?style=flat"/></a>
+<a href="https://developer.apple.com/swift"><img alt="Swift3" src="https://img.shields.io/badge/language-swift3-orange.svg?style=flat"/></a>
 <a href="http://cocoadocs.org/docsets/DelegateProxy"><img alt="Platform" src="https://img.shields.io/cocoapods/p/DelegateProxy.svg?style=flat"/></a><br>
 <a href="https://cocoapods.org/pods/DelegateProxy"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/DelegateProxy.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-yellow.svg?style=flat"/></a>
@@ -24,7 +24,7 @@ It means be able to use in combination with any other reactive-framework like [R
 ---
 
 ## Requirements
-- Swift 2.2/2.3 / Xcode 7.3/8
+- Swift 3 / Xcode 8
 - OS X 10.9 or later
 - iOS 8.0 or later
 - watchOS 2.0 or later
@@ -79,7 +79,7 @@ You can receive delegate events as following.
 ```Swift
 scrollView.delegateProxy
     .receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:))) { args in
-        guard let scrollView: UIScrollView = args.value(0) else { return }
+        guard let scrollView: UIScrollView = args.value(at: 0) else { return }
         print(scrollView.contentOffset)
 }
 ```
@@ -113,7 +113,7 @@ Receive events by streams.
 ```Swift
 scrollView.delegateProxy
     .rac_receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
-    .map { $0.value(0, as: UIScrollView.self)?.contentOffset }
+    .map { $0.value(at: 0, as: UIScrollView.self)?.contentOffset }
     .ignoreNil()
     .observeNext { print("ContentOffset: \($0)") }
 ```
@@ -141,7 +141,7 @@ Receive events by streams.
 ```Swift
 scrollView.delegateProxy
     .bnd_receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
-    .map { $0.value(0, as: UIScrollView.self)?.contentOffset }
+    .map { $0.value(at: 0, as: UIScrollView.self)?.contentOffset }
     .ignoreNil()
     .observeNew { print("ContentOffset: \($0)") }
 ```
