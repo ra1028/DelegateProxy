@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://travis-ci.org/ra1028/DelegateProxy"><img alt="Build Status" src="https://travis-ci.org/ra1028/DelegateProxy.svg?branch=master"/></a>
-<a href="https://developer.apple.com/swift"><img alt="Swift2.2" src="https://img.shields.io/badge/language-swift2.2-orange.svg?style=flat"/></a>
+<a href="https://developer.apple.com/swift"><img alt="Swift2.3" src="https://img.shields.io/badge/language-swift2.3-orange.svg?style=flat"/></a>
 <a href="http://cocoadocs.org/docsets/DelegateProxy"><img alt="Platform" src="https://img.shields.io/cocoapods/p/DelegateProxy.svg?style=flat"/></a><br>
 <a href="https://cocoapods.org/pods/DelegateProxy"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/DelegateProxy.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/Carthage-compatible-yellow.svg?style=flat"/></a>
@@ -24,7 +24,7 @@ It means be able to use in combination with any other reactive-framework like [R
 ---
 
 ## Requirements
-- Swift 2.2 / Xcode 7.3
+- Swift 2.2/2.3 / Xcode 7.3/8
 - OS X 10.9 or later
 - iOS 8.0 or later
 - watchOS 2.0 or later
