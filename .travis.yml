@@ -7,10 +7,10 @@ env:
 
 script:
   - set -o pipefail
-  - xcodebuild build test -scheme DelegateProxy-macOS -configuration Release -sdk macosx -destination 'platform=OS X,arch=x86_64' | xcpretty -c
-  - xcodebuild build test -scheme DelegateProxy-iOS -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s' | xcpretty -c
-  - xcodebuild build test -scheme DelegateProxy-tvOS -configuration Release -sdk appletvsimulator -destination "platform=tvOS Simulator,name=Apple TV 1080p" | xcpretty -c
-  - xcodebuild build -scheme DelegateProxy-watchOS -configuration Release -sdk watchsimulator -destination 'platform=watchOS Simulator,name=Apple Watch - 38mm' | xcpretty -c
+  - xcodebuild test -scheme DelegateProxy -configuration Release -sdk macosx -destination 'platform=OS X,arch=x86_64' ENABLE_TESTABILITY=YES | xcpretty -c
+  - xcodebuild test -scheme DelegateProxy -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s' ENABLE_TESTABILITY=YES | xcpretty -c
+  - xcodebuild test -scheme DelegateProxy -configuration Release -sdk appletvsimulator -destination "platform=tvOS Simulator,name=Apple TV 1080p" ENABLE_TESTABILITY=YES | xcpretty -c
+  - xcodebuild build -scheme DelegateProxy -configuration Release -sdk watchsimulator -destination 'platform=watchOS Simulator,name=Apple Watch - 38mm' ENABLE_TESTABILITY=YES | xcpretty -c
 
 notifications:
   email: false
