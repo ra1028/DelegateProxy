@@ -71,7 +71,7 @@ It can be useful to implements extension.
 ```Swift
 extension UIScrollView {
     var delegateProxy: DelegateProxy {
-        return ScrollViewDelegateProxy.proxyFor(self)
+        return ScrollViewDelegateProxy.proxy(for: self)
     }
 }
 ```

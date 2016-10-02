@@ -56,6 +56,6 @@ final class DelegateImplementedProxy: DelegateProxy, TestDelegate {
 
 extension DelegateTester {
     var delegateProxy: TestDelegateProxy {
-        return .proxyFor(self)
+        return .proxy(for: self)
     }
 }

@@ -58,12 +58,12 @@ public extension DelegateProxy {
         return super.responds(to: aSelector) || canResponds(to: aSelector)
     }
     
-    final func receive(_ selector: Selector..., receiver: Receivable) {
-        receive(selectors: selector, receiver: receiver)
+    final func receive(_ selector: Selector, receiver: Receivable) {
+        receive(selectors: [selector], receiver: receiver)
     }
     
-    final func receive(_ selector: Selector..., handler: @escaping (Arguments) -> Void) {
-        receive(selectors: selector, receiver: Receiver(handler))
+    final func receive(_ selector: Selector, handler: @escaping (Arguments) -> Void) {
+        receive(selectors: [selector], receiver: Receiver(handler))
     }
     
     final func receive(selectors: [Selector], receiver: Receivable) {
