@@ -21,7 +21,6 @@
 		2AB10F241DA18755004C3CC1 /* DelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34E1D5E599500AC312F /* DelegateProxyTests.swift */; };
 		2AB10F251DA18755004C3CC1 /* AssociatedDelegateProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B34D1D5E599500AC312F /* AssociatedDelegateProxyTests.swift */; };
 		2AB10F261DA18755004C3CC1 /* DelegateTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18B35F1D5E5B9B00AC312F /* DelegateTester.swift */; };
-		2AB10F281DA18808004C3CC1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AB10F271DA18808004C3CC1 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,7 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AB10F281DA18808004C3CC1 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +387,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryo.DelegateProxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,7 +419,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryo.DelegateProxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,7 +443,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryo.DelegateProxyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -470,7 +468,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryo.DelegateProxyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
