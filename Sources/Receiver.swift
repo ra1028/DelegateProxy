@@ -7,9 +7,9 @@
 //
 
 public final class Receiver: Receivable {
-    private let handler: Arguments -> Void
+    private let handler: (Arguments) -> Void
     
-    public init(_ handler: Arguments -> Void) {
+    public init(_ handler: @escaping (Arguments) -> Void) {
         self.handler = handler
     }
     

@@ -7,20 +7,20 @@
 //
 
 public final class Arguments {
-    public let list: [AnyObject]
+    public let list: [Any]
     
-    init(_ args: [AnyObject]) {
+    init(_ args: [Any]) {
         self.list = args
     }
 }
 
 public extension Arguments {
-    func value(at: Int) -> AnyObject? {
+    func value(at: Int) -> Any? {
         guard list.count > at else { return nil }
         return list[at]
     }
     
-    func value<T>(at: Int, `as`: T.Type = T.self) -> T? {
-        return value(at) as? T
+    func value<T>(at: Int, as: T.Type = T.self) -> T? {
+        return value(at: at) as? T
     }
 }

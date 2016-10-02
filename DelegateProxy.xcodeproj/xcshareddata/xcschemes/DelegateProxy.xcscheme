@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A8EE2261D5F8AB400C2985E"
+               BlueprintIdentifier = "2AB10F021DA18445004C3CC1"
                BuildableName = "DelegateProxy.framework"
-               BlueprintName = "DelegateProxy-iOS"
+               BlueprintName = "DelegateProxy"
                ReferencedContainer = "container:DelegateProxy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A18B3641D5E5DF200AC312F"
-               BuildableName = "DelegateProxyTests-iOS.xctest"
-               BlueprintName = "DelegateProxyTests-iOS"
+               BlueprintIdentifier = "2AB10F181DA1866A004C3CC1"
+               BuildableName = "DelegateProxyTests.xctest"
+               BlueprintName = "DelegateProxyTests"
                ReferencedContainer = "container:DelegateProxy.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A8EE2261D5F8AB400C2985E"
+            BlueprintIdentifier = "2AB10F021DA18445004C3CC1"
             BuildableName = "DelegateProxy.framework"
-            BlueprintName = "DelegateProxy-iOS"
+            BlueprintName = "DelegateProxy"
             ReferencedContainer = "container:DelegateProxy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A8EE2261D5F8AB400C2985E"
+            BlueprintIdentifier = "2AB10F021DA18445004C3CC1"
             BuildableName = "DelegateProxy.framework"
-            BlueprintName = "DelegateProxy-iOS"
+            BlueprintName = "DelegateProxy"
             ReferencedContainer = "container:DelegateProxy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A8EE2261D5F8AB400C2985E"
+            BlueprintIdentifier = "2AB10F021DA18445004C3CC1"
             BuildableName = "DelegateProxy.framework"
-            BlueprintName = "DelegateProxy-iOS"
+            BlueprintName = "DelegateProxy"
             ReferencedContainer = "container:DelegateProxy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

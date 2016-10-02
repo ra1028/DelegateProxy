@@ -16,9 +16,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A8EE2A91D5F908800C2985E"
-               BuildableName = "DelegateProxyTests-macOS.xctest"
-               BlueprintName = "DelegateProxyTests-macOS"
+               BlueprintIdentifier = "2AB10F181DA1866A004C3CC1"
+               BuildableName = "DelegateProxyTests.xctest"
+               BlueprintName = "DelegateProxyTests"
                ReferencedContainer = "container:DelegateProxy.xcodeproj">
             </BuildableReference>
          </TestableReference>

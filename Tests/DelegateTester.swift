@@ -9,17 +9,17 @@
 import DelegateProxy
 
 @objc protocol TestDelegate {
-    optional func intEvent(value: Int)
+    @objc optional func intEvent(_ value: Int)
 }
 
 @objc protocol TestInheritedDelegate: TestDelegate {
-    optional func boolEvent(value: Bool)
+    @objc optional func boolEvent(_ value: Bool)
 }
 
 final class DelegateTester: NSObject {
     weak var delegate: TestDelegate?
     
-    func sendIntEvent(value: Int) {
+    func sendIntEvent(_ value: Int) {
         delegate?.intEvent!(value)
     }
 }
@@ -27,11 +27,11 @@ final class DelegateTester: NSObject {
 final class InheritedDelegateTester: NSObject {
     weak var delegate: TestInheritedDelegate?
     
-    func sendIntEvent(value: Int) {
+    func sendIntEvent(_ value: Int) {
         delegate?.intEvent!(value)
     }
     
-    func sendBoolEvent(value: Bool) {
+    func sendBoolEvent(_ value: Bool) {
         delegate?.boolEvent!(value)
     }
 }
@@ -49,13 +49,13 @@ final class TestInheritedDelegateProxy: DelegateProxy, TestInheritedDelegate, De
 final class DelegateImplementedProxy: DelegateProxy, TestDelegate {
     private(set) var receivedValues = [Int]()
     
-    func intEvent(value: Int) {
+    func intEvent(_ value: Int) {
         receivedValues.append(value)
     }
 }
 
 extension DelegateTester {
     var delegateProxy: TestDelegateProxy {
-        return .proxyFor(self)
+        return .proxy(for: self)
     }
 }

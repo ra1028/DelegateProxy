@@ -11,12 +11,14 @@ public protocol Receivable {
 }
 
 public extension Receivable {
-    func subscribeTo(proxy proxy: DelegateProxy, selector: Selector...) -> Self {
-        subscribeTo(proxy: proxy, selectors: selector)
+    @discardableResult
+    func subscribe(to proxy: DelegateProxy, selector: Selector...) -> Self {
+        subscribe(to: proxy, selectors: selector)
         return self
     }
     
-    func subscribeTo(proxy proxy: DelegateProxy, selectors: [Selector]) -> Self {
+    @discardableResult
+    func subscribe(to proxy: DelegateProxy, selectors: [Selector]) -> Self {
         proxy.receive(selectors: selectors, receiver: self)
         return self
     }
