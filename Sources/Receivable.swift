@@ -13,8 +13,7 @@ public protocol Receivable {
 public extension Receivable {
     @discardableResult
     func subscribe(to proxy: DelegateProxy, selector: Selector...) -> Self {
-        subscribe(to: proxy, selectors: selector)
-        return self
+        return subscribe(to: proxy, selectors: selector)
     }
     
     @discardableResult
