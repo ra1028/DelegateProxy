@@ -104,15 +104,15 @@ final class RACReceiver: Receivable {
 Extension  
 ```Swift
 extension DelegateProxy {
-    func rac_receive(selector: Selector...) -> Signal<Arguments, NoError> {
-        return RACReceiver().subscribe(to: self, selectors: selector).signal
+    func rac_receive(selector: Selector) -> Signal<Arguments, NoError> {
+        return RACReceiver().subscribe(to: self, selector: selector).signal
     }
 }
 ```
 Receive events by streams.  
 ```Swift
 scrollView.delegateProxy
-    .rac_receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
+    .rac_receive(selector: #selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
     .map { $0.value(at: 0, as: UIScrollView.self)?.contentOffset }
     .skipNil()
     .observeValues { print("ContentOffset: \($0)") }
@@ -132,15 +132,15 @@ final class BondReceiver: Receivable {
 Extension  
 ```Swift
 extension DelegateProxy {
-    func bnd_receive(selector: Selector...) -> Signal<Arguments, NoError> {
-        return BondReceiver().subscribe(to: self, selectors: selector).subject.toSignal()
+    func bnd_receive(selector: Selector) -> Signal<Arguments, NoError> {
+        return BondReceiver().subscribe(to: self, selector: selector).subject.toSignal()
     }
 }
 ```
 Receive events by streams.  
 ```Swift
 scrollView.delegateProxy
-    .bnd_receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
+    .bnd_receive(selector: #selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
     .map { $0.value(at: 0, as: UIScrollView.self)?.contentOffset }
     .ignoreNil()
     .observeNext { print("ContentOffset: \($0)") }

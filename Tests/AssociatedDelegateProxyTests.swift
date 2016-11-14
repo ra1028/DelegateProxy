@@ -18,12 +18,12 @@ final class AssociatedDelegateProxyTests: XCTestCase {
         XCTAssertEqual(proxy1, proxy2)
     }
     
-    func testDelegateForwardable() {
+    func testDelegateProxyExtension() {
         let tester = DelegateTester()
         
         var value = 0
         tester.delegateProxy
-            .receive(#selector(TestDelegate.intEvent(_:))) {
+            .receive(selector: #selector(TestDelegate.intEvent(_:))) {
                 guard let arg: Int = $0.value(at: 0) else {
                     XCTAssert(false, "Invalid argument type")
                     return

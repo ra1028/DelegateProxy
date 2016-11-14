@@ -58,23 +58,13 @@ public extension DelegateProxy {
         return super.responds(to: aSelector) || canResponds(to: aSelector)
     }
     
-    final func receive(_ selector: Selector, receiver: Receivable) {
-        receive(selectors: [selector], receiver: receiver)
+    final func receive(selector: Selector, receiver: Receivable) {
+        precondition(responds(to: selector), "\(type(of: self)) doesn't respond to selector \(selector).")
+        receivables[selector] = receiver
     }
     
-    final func receive(_ selector: Selector, handler: @escaping (Arguments) -> Void) {
-        receive(selectors: [selector], receiver: Receiver(handler))
-    }
-    
-    final func receive(selectors: [Selector], receiver: Receivable) {
-        selectors.forEach {
-            precondition(responds(to: $0), "\(type(of: self)) doesn't respond to selector \($0).")
-            receivables[$0] = receiver
-        }
-    }
-    
-    final func receive(selectors: [Selector], handler: @escaping (Arguments) -> Void) {
-        receive(selectors: selectors, receiver: Receiver(handler))
+    final func receive(selector: Selector, handler: @escaping (Arguments) -> Void) {
+        receive(selector: selector, receiver: Receiver(handler))
     }
 }
 
@@ -105,7 +95,7 @@ private extension DelegateProxy {
         return (0..<count)
             .flatMap { protocolPointer[$0] }
             .map(collectSelectors)
-            .reduce(Set<Selector>()) { $0.union($1) }
+            .reduce(.init()) { $0.union($1) }
     }
     
     func canResponds(to aSelector: Selector) -> Bool {
