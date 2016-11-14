@@ -70,8 +70,8 @@ final class ScrollViewDelegateProxy: DelegateProxy, UIScrollViewDelegate, Delega
 It can be useful to implements extension.  
 ```Swift
 extension UIScrollView {
-    var delegateProxy: DelegateProxy {
-        return ScrollViewDelegateProxy.proxy(for: self)
+    var delegateProxy: ScrollViewDelegateProxy {
+        return .proxy(for: self)
     }
 }
 ```
