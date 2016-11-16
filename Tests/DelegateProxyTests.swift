@@ -16,7 +16,7 @@ final class DelegateProxyTests: XCTestCase {
         tester.delegate = proxy
         
         var value = 0
-        proxy.receive(#selector(TestDelegate.intEvent(_:))) {
+        proxy.receive(selector: #selector(TestDelegate.intEvent(_:))) {
             guard let arg: Int = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
@@ -37,7 +37,7 @@ final class DelegateProxyTests: XCTestCase {
         tester.delegate = proxy
         
         var int = 0
-        proxy.receive(#selector(TestInheritedDelegate.intEvent(_:))) {
+        proxy.receive(selector: #selector(TestInheritedDelegate.intEvent(_:))) {
             guard let arg: Int = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
@@ -46,7 +46,7 @@ final class DelegateProxyTests: XCTestCase {
         }
         
         var bool = false
-        proxy.receive(#selector(TestInheritedDelegate.boolEvent(_:))) {
+        proxy.receive(selector: #selector(TestInheritedDelegate.boolEvent(_:))) {
             guard let arg: Bool = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
@@ -67,7 +67,7 @@ final class DelegateProxyTests: XCTestCase {
         tester.delegate = proxy
         
         var value = 0
-        proxy.receive(#selector(TestDelegate.intEvent(_:))) {
+        proxy.receive(selector: #selector(TestDelegate.intEvent(_:))) {
             guard let arg: Int = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return
@@ -86,7 +86,7 @@ final class DelegateProxyTests: XCTestCase {
         tester.delegate = proxy
         
         var value = 0
-        proxy.receive(#selector(TestDelegate.intEvent(_:))) {
+        proxy.receive(selector: #selector(TestDelegate.intEvent(_:))) {
             guard let arg: Int = $0.value(at: 0) else {
                 XCTAssert(false, "Invalid argument type")
                 return

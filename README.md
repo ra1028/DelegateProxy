@@ -70,8 +70,8 @@ final class ScrollViewDelegateProxy: DelegateProxy, UIScrollViewDelegate, Delega
 It can be useful to implements extension.  
 ```Swift
 extension UIScrollView {
-    var delegateProxy: DelegateProxy {
-        return ScrollViewDelegateProxy.proxy(for: self)
+    var delegateProxy: ScrollViewDelegateProxy {
+        return .proxy(for: self)
     }
 }
 ```
@@ -97,32 +97,32 @@ final class RACReceiver: Receivable {
     let (signal, observer) = Signal<Arguments, NoError>.pipe()
 
     func send(arguments: Arguments) {
-        observer.sendNext(arguments)
+        observer.send(value: arguments)
     }
 }
 ```
 Extension  
 ```Swift
 extension DelegateProxy {
-    func rac_receive(selector: Selector...) -> Signal<Arguments, NoError> {
-        return RACReceiver().subscribeTo(proxy: self, selectors: selector).signal
+    func rac_receive(selector: Selector) -> Signal<Arguments, NoError> {
+        return RACReceiver().subscribe(to: self, selector: selector).signal
     }
 }
 ```
 Receive events by streams.  
 ```Swift
 scrollView.delegateProxy
-    .rac_receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
+    .rac_receive(selector: #selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
     .map { $0.value(at: 0, as: UIScrollView.self)?.contentOffset }
-    .ignoreNil()
-    .observeNext { print("ContentOffset: \($0)") }
+    .skipNil()
+    .observeValues { print("ContentOffset: \($0)") }
 ```
 
 #### With [SwiftBond](https://github.com/SwiftBond/Bond)
 Create receiver class.  
 ```Swift
 final class BondReceiver: Receivable {
-    let subject = EventProducer<Arguments>()
+    let subject = PublishSubject<Arguments, NoError>()
 
     func send(arguments: Arguments) {
         subject.next(arguments)
@@ -132,18 +132,18 @@ final class BondReceiver: Receivable {
 Extension  
 ```Swift
 extension DelegateProxy {
-    func bnd_receive(selector: Selector...) -> EventProducer<Arguments> {
-        return BondReceiver().subscribeTo(proxy: self, selectors: selector).subject
+    func bnd_receive(selector: Selector) -> Signal<Arguments, NoError> {
+        return BondReceiver().subscribe(to: self, selector: selector).subject.toSignal()
     }
 }
 ```
 Receive events by streams.  
 ```Swift
 scrollView.delegateProxy
-    .bnd_receive(#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
+    .bnd_receive(selector: #selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
     .map { $0.value(at: 0, as: UIScrollView.self)?.contentOffset }
     .ignoreNil()
-    .observeNew { print("ContentOffset: \($0)") }
+    .observeNext { print("ContentOffset: \($0)") }
 ```
 
 ---
