@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode11.3
 
 env:
   global:
@@ -8,7 +8,7 @@ env:
 script:
   - set -o pipefail
   - xcodebuild test -scheme DelegateProxy -configuration Release -sdk macosx -destination 'platform=OS X,arch=x86_64' ENABLE_TESTABILITY=YES | xcpretty -c
-  - xcodebuild test -scheme DelegateProxy -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s' ENABLE_TESTABILITY=YES | xcpretty -c
+  - xcodebuild test -scheme DelegateProxy -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X' ENABLE_TESTABILITY=YES | xcpretty -c
   - xcodebuild test -scheme DelegateProxy -configuration Release -sdk appletvsimulator -destination "platform=tvOS Simulator,name=Apple TV 1080p" ENABLE_TESTABILITY=YES | xcpretty -c
   - xcodebuild build -scheme DelegateProxy -configuration Release -sdk watchsimulator -destination 'platform=watchOS Simulator,name=Apple Watch - 38mm' ENABLE_TESTABILITY=YES | xcpretty -c
 

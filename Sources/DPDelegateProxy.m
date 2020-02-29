@@ -12,6 +12,14 @@
 
 @implementation DPDelegateProxy
 
++ (void)swiftyInitialize {
+    // override in DelegateProxy.swift
+}
+
++ (void)initialize {
+    [self swiftyInitialize];
+}
+
 - (void)interceptedSelector:(SEL)selector arguments:(NSArray *)arguments {
     NSAssert(NO, @"Abstract method");
 }

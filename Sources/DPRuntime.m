@@ -49,7 +49,7 @@ id _Nonnull DP_argumentsFromInvocationWithIndex(NSInvocation * _Nonnull invocati
         return @(val); \
     }
     
-    if (isArgumentTypeEquatTo(id) || isArgumentTypeEquatTo(Class) || isArgumentTypeEquatTo(void (^)())) {
+    if (isArgumentTypeEquatTo(id) || isArgumentTypeEquatTo(Class) || isArgumentTypeEquatTo(void (^)(void))) {
         __unsafe_unretained id argument = nil;
         [invocation getArgument:&argument atIndex:index];
         return argument;
