@@ -8,6 +8,8 @@
 
 @interface DPDelegateProxy: NSObject
 
++ (void)swiftyInitialize;
+
 - (void)interceptedSelector:(SEL _Nonnull)selector arguments:(NSArray * _Nonnull)arguments;
 
 @end

@@ -26,7 +26,7 @@ open class DelegateProxy: DPDelegateProxy {
 }
 
 public extension DelegateProxy {
-    final override class func initialize() {
+    @objc override static func swiftyInitialize() {
         lock()
         defer { unlock() }
         
@@ -82,18 +82,18 @@ private extension DelegateProxy {
         let protocols = protocol_copyProtocolList(p, &protocolsCount)
         
         let methodSelectors = (0..<protocolMethodCount)
-            .flatMap { methodDescriptions?[Int($0)] }
+            .compactMap { methodDescriptions?[Int($0)] }
             .filter(DP_isMethodReturnTypeVoid)
-            .flatMap { $0.name }
+            .compactMap { $0.name }
         
         let protocolSelectors = protocols.map { collectSelectors(fromProtocolPointer: $0, count: Int(protocolsCount)) } ?? []
         
         return Set(methodSelectors).union(protocolSelectors)
     }
     
-    static func collectSelectors(fromProtocolPointer protocolPointer: AutoreleasingUnsafeMutablePointer<Protocol?>, count: Int) -> Set<Selector> {
+    static func collectSelectors(fromProtocolPointer protocolPointer: AutoreleasingUnsafeMutablePointer<Protocol>, count: Int) -> Set<Selector> {
         return (0..<count)
-            .flatMap { protocolPointer[$0] }
+            .compactMap { protocolPointer[$0] }
             .map(collectSelectors)
             .reduce(.init()) { $0.union($1) }
     }
